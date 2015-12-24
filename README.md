@@ -1,4 +1,6 @@
-grempe.github.io
-================
+bundle install || bundle update
+bundle exec jekyll serve
 
-Glenn Rempe's Public Pages
+Read more about Github hosted user pages here:
+https://help.github.com/articles/using-jekyll-with-pages/
+
