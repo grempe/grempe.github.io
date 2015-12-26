@@ -1,0 +1,54 @@
+==================================================================
+https://keybase.io/grempe
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://grempe.github.io
+  * I am grempe (https://keybase.io/grempe) on keybase.
+  * I have a public key ASClS3nfNv_uETjjTzjbmnAVnJ_fzj982xPLtk0blC8Pdgo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0101e06701b3639660891faf97b8ffb15e3c565aeb8fd903bcfdd7bd0ca069279af80a",
+            "host": "keybase.io",
+            "kid": "0120a54b79df36ffee1138e34f38db9a70159c9fdfce3f7cdb13cbb64d1b942f0f760a",
+            "uid": "3ad8a02499ae93031f5d7b6c9f705800",
+            "username": "grempe"
+        },
+        "service": {
+            "hostname": "grempe.github.io",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.7"
+    },
+    "ctime": 1451163494,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1451163322,
+        "hash": "bdfd54ee547efe9bdece7424e713efbeb50368247217104f03a84b545389d91c52da5bb29e64b78f889c71a8397e4d20a7b644139db1c1be02afc14258351002",
+        "seqno": 338887
+    },
+    "prev": "aab8dcccc99e4e002c56728aca9f57cb0f7af4faa722356f084ae492d876fa44",
+    "seqno": 28,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+g6Rib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgpUt53zb/7hE4408425pwFZyf384/fNsTy7ZNG5QvD3YKp3BheWxvYWTFAvZ7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTAxZTA2NzAxYjM2Mzk2NjA4OTFmYWY5N2I4ZmZiMTVlM2M1NjVhZWI4ZmQ5MDNiY2ZkZDdiZDBjYTA2OTI3OWFmODBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwYTU0Yjc5ZGYzNmZmZWUxMTM4ZTM0ZjM4ZGI5YTcwMTU5YzlmZGZjZTNmN2NkYjEzY2JiNjRkMWI5NDJmMGY3NjBhIiwidWlkIjoiM2FkOGEwMjQ5OWFlOTMwMzFmNWQ3YjZjOWY3MDU4MDAiLCJ1c2VybmFtZSI6ImdyZW1wZSJ9LCJzZXJ2aWNlIjp7Imhvc3RuYW1lIjoiZ3JlbXBlLmdpdGh1Yi5pbyIsInByb3RvY29sIjoiaHR0cHM6In0sInR5cGUiOiJ3ZWJfc2VydmljZV9iaW5kaW5nIiwidmVyc2lvbiI6MX0sImNsaWVudCI6eyJuYW1lIjoia2V5YmFzZS5pbyBnbyBjbGllbnQiLCJ2ZXJzaW9uIjoiMS4wLjcifSwiY3RpbWUiOjE0NTExNjM0OTQsImV4cGlyZV9pbiI6NTA0NTc2MDAwLCJtZXJrbGVfcm9vdCI6eyJjdGltZSI6MTQ1MTE2MzMyMiwiaGFzaCI6ImJkZmQ1NGVlNTQ3ZWZlOWJkZWNlNzQyNGU3MTNlZmJlYjUwMzY4MjQ3MjE3MTA0ZjAzYTg0YjU0NTM4OWQ5MWM1MmRhNWJiMjllNjRiNzhmODg5YzcxYTgzOTdlNGQyMGE3YjY0NDEzOWRiMWMxYmUwMmFmYzE0MjU4MzUxMDAyIiwic2Vxbm8iOjMzODg4N30sInByZXYiOiJhYWI4ZGNjY2M5OWU0ZTAwMmM1NjcyOGFjYTlmNTdjYjBmN2FmNGZhYTcyMjM1NmYwODRhZTQ5MmQ4NzZmYTQ0Iiwic2Vxbm8iOjI4LCJ0YWciOiJzaWduYXR1cmUifaNzaWfEQFa4oOn5l0xlqmOC0DE7OgILH/h1mHU7n7qgE4YywlplNiElcHanVqbNNn1t+SpTa2zKrRfexzzTGV0ZX5AABQeoc2lnX3R5cGUgo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/grempe
+
+==================================================================
