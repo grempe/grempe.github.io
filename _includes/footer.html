@@ -2,12 +2,10 @@
 
   <div class="wrapper">
 
-    <h2 class="footer-heading">{{ site.title }}</h2>
-
     <div class="footer-col-wrapper">
       <div class="footer-col  footer-col-1">
         <ul class="contact-list">
-          <li>{{ site.title }}</li>
+          <li>{{ site.name }}</li>
           <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
         </ul>
       </div>
@@ -47,6 +45,16 @@
 
       <div class="footer-col  footer-col-3">
         <p class="text">{{ site.description }}</p>
+        <p>
+          <a href="{{ site.source_url }}" target="_blank">blog source</a><br />
+          <a href="{{ "/feed.xml" | prepend: site.baseurl }}">blog RSS feed</a><br />
+        </p>
+        <p>
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+          <img alt="Creative Commons License" style="border-width:0"
+               src="{{ "/resources/cc-by-nc-sa.png" | prepend: site.baseurl }}"/>
+          </a>
+        </p>
       </div>
     </div>
 
