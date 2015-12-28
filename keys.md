@@ -10,7 +10,7 @@ permalink: /keys/
 ownership of certain OpenPGP keys uses those keys to sign proofs
 that claim ownership of other Internet properties.You can independantly verify
 the cryptographic proofs on each of those properties to see if I do in
-fact control them. You can find all of my PGP public keys and all of my claimed
+fact control them. You can find my PGP public key and all of my claimed
 properties at [https://keybase.io/grempe](https://keybase.io/grempe).
 
 
@@ -24,8 +24,7 @@ I use different keys for different things. There are specialized keys for
 email, code signing, and for signing the Git repository I manage this blog with.
 
 Since this repository is signed, either at commit time or with a signed tag, any
-content that is found within this repo can probably be implicitly be trusted as coming
-from me.
+content that is found within can be implicitly trusted.
 
 ### Master Signing Key
 
@@ -51,7 +50,9 @@ the fingerprint of this master key using some other channel in addition to this 
 
 ### Blog Signing Key
 
-The following key is used to sign this blog repository:
+The following key is used to sign this blog repository. Signatures applied to
+commits or tags can be cryptographically verified using the [GPG signing functionality
+built into Git](http://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work){:target="_blank"}.
 
 {% highlight text %}
 pub   rsa4096/0x37B8284B4B3EBE74 2015-12-27
@@ -65,6 +66,79 @@ sig!         0x63608B66C0929A67 2015-12-27  Glenn Rempe (Master Signing Key)
 {% endhighlight %}
 
 Download [0x37B8284B4B3EBE74.asc](/downloads/keys/0x37B8284B4B3EBE74.asc) from this signed repo.
+
+#### Verifying Signed Commits
+
+You can verify the commit or tag signatures on this blog by installing this signing
+key in your local GPG, making a local clone of this repository, and viewing the commit
+log with signatures.
+
+{% highlight text %}
+# download my blog signing key to your local system using the link above
+# and change to your download directory (will vary by system)
+$ cd ~/Downloads
+
+# import the signing key
+$ gpg2 --import 0x37B8284B4B3EBE74.asc
+
+# verify the new public key is installed in GPG
+$ gpg2 --list-keys 0x37B8284B4B3EBE74
+
+# update the key from the keyserver
+# (picking up new signatures or revocations)
+$ gpg2 --keyserver http://keyserver.cns.vt.edu --recv-keys 0x37B8284B4B3EBE74
+
+# make a local git clone of this blog repo
+$ git clone https://github.com/grempe/grempe.github.io.git
+$ cd grempe.github.io
+
+# view the log showing any signatures associated with commits
+$ git log --show-signature
+{% endhighlight %}
+
+A good signature on a commit looks like this example. A signature on a commit
+or tag covers all previous commits reachable by that commit.
+
+{% highlight text %}
+commit 29c1b16c4397cda5d6cd03401052300752197eb8
+gpg: Signature made Mon Dec 28 11:25:00 2015 PST
+gpg:                using RSA key 0x37B8284B4B3EBE74
+gpg: Good signature from "Glenn Rempe (Blog Signing Key) <glenn@rempe.us>" [ultimate]
+Primary key fingerprint: A866 1C60 4BFD 85DE 26B7  80E5 37B8 284B 4B3E BE74
+Author: Glenn Rempe <glenn@rempe.us>
+Date:   Mon Dec 28 11:24:59 2015 -0800
+
+    Change title to rempe.us
+{% endhighlight %}
+
+#### Verifying Signed Tags
+
+Similar to signed git commits, git tags can also be signed and verified. Signed
+tags also secure all commits reachable by that tag.
+
+Install my blog signing key as shown above, list all tags with `git tag --list` and
+verify any individual tag with `git tag -v TAGNAME` where `TAGNAME` is one of the tags
+I have created. Here is an example:
+
+{% highlight text %}
+# view all tags
+$ git tag -l
+v1.0.0-beta
+
+# verify an individual tag
+$ git tag -v v1.0.0-beta
+object 29c1b16c4397cda5d6cd03401052300752197eb8
+type commit
+tag v1.0.0-beta
+tagger Glenn Rempe <glenn@rempe.us> 1451332998 -0800
+
+Beta release of the new site
+gpg: Signature made Mon Dec 28 12:03:18 2015 PST
+gpg:                using RSA key 0x37B8284B4B3EBE74
+gpg: Good signature from "Glenn Rempe (Blog Signing Key) <glenn@rempe.us>" [ultimate]
+Primary key fingerprint: A866 1C60 4BFD 85DE 26B7  80E5 37B8 284B 4B3E BE74
+{% endhighlight %}
+
 
 ### Code Signing Key
 
@@ -112,7 +186,7 @@ sig!         0x63608B66C0929A67 2015-12-27  Glenn Rempe (Master Signing Key)
 
 Download [0xA4A288A3BECCAE17.asc](/downloads/keys/0xA4A288A3BECCAE17.asc) from this signed repo.
 
-You can find some additional info on this email key at the following links:
+Find some additional info on this email key and its position in the Web of Trust:
 
 * [http://biglumber.com/x/web?sn=Glenn+Rempe](http://biglumber.com/x/web?sn=Glenn+Rempe)
 * [http://biglumber.com/x/web?qs=0xA4A288A3BECCAE17](http://biglumber.com/x/web?qs=0xA4A288A3BECCAE17)
@@ -133,5 +207,5 @@ Naturally we would like the old code, written and signed when the key was
 still valid, to continue to verify cleanly long into the future. The only way
 I am currently aware of accomplishing that is with keys that never expire.
 
-*This page and my key management technique was inspired by
+*This page and my key management techniques were inspired by
 [Joanna Rutkowska's key page](http://blog.invisiblethings.org/keys/){:target="_blank"}.*
