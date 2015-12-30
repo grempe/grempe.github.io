@@ -2,9 +2,7 @@
 
 ````
 bundle install || bundle update
-bundle exec jekyll serve
+bundle exec jekyll serve --watch --drafts
 ````
 
 [Read more about Github hosted user pages](https://help.github.com/articles/using-jekyll-with-pages/)
-
-

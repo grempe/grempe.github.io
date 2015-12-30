@@ -91,7 +91,7 @@ miniLock ID (glenn@rempe.us):
 
 ### XMPP + OTR Chat
 
-Please contact me in advance if you wish to chat via XMPP + OTR.
+Learn more about [using XMPP+OTR+TOR in a great article](https://theintercept.com/2015/07/14/communicating-secret-watched/){:target="_blank"} by Micah Lee. Please contact me in advance if you wish to chat via XMPP + OTR.
 
 {% highlight text %}
 XMPP/Jabber Address: grempe@xmpp-hosting.de

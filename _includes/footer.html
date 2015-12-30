@@ -7,6 +7,7 @@
         <ul class="contact-list">
           <li>{{ site.name }}</li>
           <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          <li><a href="mailto:{{ site.email }}">{{ site.email_secure }}</a></li>
         </ul>
       </div>
 
@@ -46,14 +47,19 @@
       <div class="footer-col  footer-col-3">
         <p class="text">{{ site.description }}</p>
         <p>
-          <a href="{{ site.source_url }}" target="_blank">blog source</a><br />
-          <a href="{{ "/feed.xml" | prepend: site.baseurl }}">blog RSS feed</a><br />
+          <a href="{{ site.source_url }}" target="_blank">site source code</a><br />
+          <a href="https://github.com/grempe/grempe.github.io/issues" target="_blank">report an issue</a><br />
+          <a href="{{ "/feed.xml" | prepend: site.baseurl }}">atom/rss feed</a>
         </p>
         <p>
           <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
           <img alt="Creative Commons License" style="border-width:0"
                src="{{ "/resources/cc-by-nc-sa.png" | prepend: site.baseurl }}"/>
           </a>
+        </p>
+        <p>
+          site updated @<br />
+          {{ site.time | date_to_rfc822 }}
         </p>
       </div>
     </div>
