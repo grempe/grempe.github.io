@@ -208,7 +208,7 @@ still valid, to continue to verify cleanly long into the future. The only way
 I am currently aware of accomplishing that is with keys that never expire.
 
 
-### miniLock
+## miniLock
 
 [minilock](https://minilock.io/) is a Chrome browser extension that uses your email
 and a secret passphrase to generate a miniLock ID. miniLock IDs are small and
