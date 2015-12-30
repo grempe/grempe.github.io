@@ -6,17 +6,17 @@ permalink: /keys/
 
 ## Keybase
 
-[Keybase](https://keybase.io) provides a way to claim
+[Keybase](https://keybase.io){:target="_blank"} provides a way to claim
 ownership of certain OpenPGP keys uses those keys to sign proofs
 that claim ownership of other Internet properties.You can independantly verify
 the cryptographic proofs on each of those properties to see if I do in
 fact control them. You can find my PGP public key and all of my claimed
-properties at [https://keybase.io/grempe](https://keybase.io/grempe).
+properties at [https://keybase.io/grempe](https://keybase.io/grempe){:target="_blank"}.
 
 
 ## OpenPGP / GnuPG Keys
 
-I use [GnuPG](https://gnupg.org/) for email encryption and signing. I also use
+I use [GnuPG](https://gnupg.org/){:target="_blank"} for email encryption and signing. I also use
 it to sign various other things, such as documents, code, and this blog. I have
 transitioned fully to `GnuPG 'Modern' version > 2.1.9`.
 
@@ -46,7 +46,7 @@ Download [0x63608B66C0929A67.asc](/downloads/keys/0x63608B66C0929A67.asc) from t
 
 This key is also attached to this repo in the downloads/keys/ directory. You should verify
 the fingerprint of this master key using some other channel in addition to this blog
-(e.g. my [https://keybase.io/grempe](https://keybase.io/grempe) account).
+(e.g. my [https://keybase.io/grempe](https://keybase.io/grempe){:target="_blank"} account).
 
 ### Blog Signing Key
 
@@ -188,10 +188,10 @@ Download [0xA4A288A3BECCAE17.asc](/downloads/keys/0xA4A288A3BECCAE17.asc) from t
 
 Find some additional info on this email key and its position in the Web of Trust:
 
-* [http://biglumber.com/x/web?sn=Glenn+Rempe](http://biglumber.com/x/web?sn=Glenn+Rempe)
-* [http://biglumber.com/x/web?qs=0xA4A288A3BECCAE17](http://biglumber.com/x/web?qs=0xA4A288A3BECCAE17)
-* [http://keyserver.cns.vt.edu/pks/lookup?search=0xA4A288A3BECCAE17&op=vindex](http://keyserver.cns.vt.edu/pks/lookup?search=0xA4A288A3BECCAE17&op=vindex)
-* [http://pgp.cs.uu.nl/mk_path.cgi?STAT=0xBECCAE17&STATS=statistics](http://pgp.cs.uu.nl/mk_path.cgi?STAT=0xBECCAE17&STATS=statistics)
+* [http://biglumber.com/x/web?sn=Glenn+Rempe](http://biglumber.com/x/web?sn=Glenn+Rempe){:target="_blank"}
+* [http://biglumber.com/x/web?qs=0xA4A288A3BECCAE17](http://biglumber.com/x/web?qs=0xA4A288A3BECCAE17){:target="_blank"}
+* [http://keyserver.cns.vt.edu/pks/lookup?search=0xA4A288A3BECCAE17&op=vindex](http://keyserver.cns.vt.edu/pks/lookup?search=0xA4A288A3BECCAE17&op=vindex){:target="_blank"}
+* [http://pgp.cs.uu.nl/mk_path.cgi?STAT=0xBECCAE17&STATS=statistics](http://pgp.cs.uu.nl/mk_path.cgi?STAT=0xBECCAE17&STATS=statistics){:target="_blank"}
 
 
 ### Note on the lack of expiration dates on signing keys
@@ -210,7 +210,7 @@ I am currently aware of accomplishing that is with keys that never expire.
 
 ## miniLock
 
-[minilock](https://minilock.io/) is a Chrome browser extension that uses your email
+[miniLock](https://minilock.io/){:target="_blank"} is a Chrome browser extension that uses your email
 and a secret passphrase to generate a miniLock ID. miniLock IDs are small and
 easy to share online — anyone can use your ID to encrypt files to you, and
 you can encrypt files to friends using their miniLock IDs. miniLock is a pretty
