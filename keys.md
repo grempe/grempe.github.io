@@ -207,5 +207,39 @@ Naturally we would like the old code, written and signed when the key was
 still valid, to continue to verify cleanly long into the future. The only way
 I am currently aware of accomplishing that is with keys that never expire.
 
+
+### miniLock
+
+[minilock](https://minilock.io/) is a Chrome browser extension that uses your email
+and a secret passphrase to generate a miniLock ID. miniLock IDs are small and
+easy to share online — anyone can use your ID to encrypt files to you, and
+you can encrypt files to friends using their miniLock IDs. miniLock is a pretty
+simple way to encrypt any document and can be used by almost anyone. Your miniLock
+public key is small enough to fit in a Tweet.
+
+{% highlight text %}
+miniLock ID (glenn@rempe.us):
+2Gas5UUw2piLwcHYcmmnRqJnCXADvnRBVT8TEAeVrfPZHw
+{% endhighlight %}
+
+
+## Minisign
+
+[Minisign](https://jedisct1.github.io/minisign/){:target="_blank"} is a 'dead
+simple tool to sign files and verify signatures'.
+
+Any files I may sign with `minisign` with be accompanied by
+a corresponding `*.minisig` file.
+
+You can verify the signature using my `minisign` public key:
+
+`RWQoTKyaaWHgW90HtwGvvCCTqmTGcUTiEeW+YHxdE4t+ijBEONfEPlpO`
+
+{% highlight text %}
+# example usage to verify a file
+minisign -Vm <file> -P RWQoTKyaaWHgW90HtwGvvCCTqmTGcUTiEeW+YHxdE4t+ijBEONfEPlpO
+{% endhighlight %}
+
+
 *This page and my key management techniques were inspired by
 [Joanna Rutkowska's key page](http://blog.invisiblethings.org/keys/){:target="_blank"}.*

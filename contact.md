@@ -72,23 +72,6 @@ to your contacts on your Mac or iOS device.
 *Supports : Text Messaging / Voice Calls / Video Calls / Photos / Videos*
 
 
-### miniLock
-
-[minilock](https://minilock.io/) is a Chrome browser extension that uses your email
-and a secret passphrase to generate a miniLock ID. miniLock IDs are small and
-easy to share online — anyone can use your ID to encrypt files to you, and
-you can encrypt files to friends using their miniLock IDs. miniLock is a pretty
-simple way to encrypt any document and can be used by almost anyone. Your miniLock
-public key is small enough to fit in a Tweet.
-
-{% highlight text %}
-miniLock ID (glenn@rempe.us):
-2Gas5UUw2piLwcHYcmmnRqJnCXADvnRBVT8TEAeVrfPZHw
-{% endhighlight %}
-
-*Supports : Encrypted Files (send as attachment via another method)*
-
-
 ### XMPP + OTR Chat
 
 Learn more about [using XMPP+OTR+TOR in a great article](https://theintercept.com/2015/07/14/communicating-secret-watched/){:target="_blank"} by Micah Lee. Please contact me in advance if you wish to chat via XMPP + OTR.
