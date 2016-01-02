@@ -375,12 +375,13 @@ public key is small enough to fit in a Tweet. Here is mine.
 [Minisign](https://jedisct1.github.io/minisign/){:target="_blank"} is a 'dead
 simple tool to sign files and verify signatures'.
 
-Any files I may sign with `minisign` with be accompanied by
-a corresponding `*.minisig` file.
+Any files I may sign with Minisign with be accompanied by a corresponding `*.minisig` file.
 
-You can verify the signature using my `minisign` public key:
+You can verify the signature using my Minisign public key:
 
-`RWQoTKyaaWHgW90HtwGvvCCTqmTGcUTiEeW+YHxdE4t+ijBEONfEPlpO`
+{% highlight text %}
+RWQoTKyaaWHgW90HtwGvvCCTqmTGcUTiEeW+YHxdE4t+ijBEONfEPlpO
+{% endhighlight %}
 
 {% highlight text %}
 # example usage to verify a file
