@@ -22,6 +22,11 @@ markdown: kramdown
 gems:
   - jekyll-redirect-from
   - jekyll-sitemap
+  - jekyll-mentions
 whitelist:
   - jekyll-redirect-from
   - jekyll-sitemap
+  - jekyll-mentions
+
+jekyll-mentions:
+  base_url: https://twitter.com
