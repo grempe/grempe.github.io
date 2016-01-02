@@ -106,10 +106,10 @@ gpg> quit
 
 ### Master Signing Key
 
-The 'Trust Root'. All my intermediate signing keys (blog, code, email) are signed
-by this master key. The master key is kept offline and is never used for anything
-except to sign intermediate keys. Verifying the signature of this key is the
-strongest method to determine if a key is indeed mine.
+The 'Trust Root'. All my intermediate signing keys (blog, code), and my email keys
+are signed by this master key. The master key is kept offline and is never used for
+anything but signing my other keys. Verifying the presence of this key signature is the
+strongest way to determine if a key is indeed mine.
 
 {% highlight text %}
 pub   rsa4096/0x63608B66C0929A67 2015-12-27

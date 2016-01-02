@@ -40,12 +40,10 @@ If you also have an account with ProtonMail (which is free and anonymous),
 and send email to me from that account, our emails will be end-to-end encrypted
 (a good thing).
 
-If you send email from any email provider other than ProtonMail (e.g. you@gmail.com)
-then your email will only be encrypted once it reaches my ProtonMail Inbox. Your original
-email and any replies I send to you will still be stored on *your* server
-in unencrypted form which is [not a good thing](http://www.zdnet.com/article/fbi-says-it-doesnt-need-a-warrant-to-snoop-on-private-email-social-network-messages/){:target="_blank"}
-for me or you. In this case please send me PGP encrypted email (pasted inline,
-not mime attached) using [my PGP public keys](/keys/).
+If you send from another email provider, our messages
+may not be encrypted and may be stored on your mail server un-encrypted. In this
+case please send me PGP encrypted email (inline, not mime attached)
+using [my PGP public email key](/keys/).
 
 Get a free [ProtonMail](https://protonmail.com) account, its better for everyone.
 
