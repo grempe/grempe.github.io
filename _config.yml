@@ -18,3 +18,8 @@ markdown: kramdown
 # paragraph of content for index.html excerpt. First paragraph by default.
 # http://jekyllrb.com/docs/posts/
 #excerpt_separator: <!--more-->
+
+gems:
+  - jekyll-redirect-from
+whitelist:
+  - jekyll-redirect-from
