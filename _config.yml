@@ -1,18 +1,27 @@
 # Site settings
+timezone: "America/Los_Angeles"
 title: rempe.us
 name: "Glenn Rempe"
 email: glenn@rempe.us
 email_secure: grempe@protonmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  My personal website. It may not be much, but its all mine.
+  A personal website and blog for Glenn Rempe. All opinions expressed are my own.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "https://www.rempe.us" # the base hostname & protocol for your site
+url: "https://www.rempe.us" # the base hostname & protocol for your site with no trailing slash
 source_url: "https://github.com/grempe/grempe.github.io" # the location of the source code for this site.
 twitter_username: grempe
 github_username:  grempe
 
 # Build settings
 markdown: kramdown
+
+# store static markdown pages in _pages/
+include: ['_pages']
+relative_permalinks: false
+
+paginate:      5
+permalink:     "/blog/:title/"
+paginate_path: "/blog/page:num/"
 
 # excerpt separator : insert in post content to split out first
 # paragraph of content for index.html excerpt. First paragraph by default.

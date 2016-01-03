@@ -188,7 +188,11 @@
     font-size: 24px;
 }
 
-
+.center-image
+{
+    margin: 0 auto;
+    display: block;
+}
 
 /**
  * Posts
@@ -233,4 +237,13 @@
             font-size: 18px;
         }
     }
+}
+
+.inline-list {
+  margin-left: 0px;
+}
+
+.inline-list li {
+  display: inline;
+  list-style-type: none;
 }

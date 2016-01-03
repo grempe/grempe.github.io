@@ -1,0 +1,12 @@
+- url: /about/
+  title: About Me
+- url: /contact/
+  title: Contact
+- url: /keys/
+  title: My Keys
+- url: /projects/
+  title: Projects
+- url: /resume/
+  title: Résumé
+- url: /blog/
+  title: Blog

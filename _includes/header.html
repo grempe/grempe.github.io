@@ -13,15 +13,16 @@
         </svg>
       </a>
 
+      <!-- see _data/pages.yml -->
+      {% assign pages_list = site.data.pages %}
       <div class="trigger">
-        <a class="page-link" href="/">Blog</a>
-
-        {% for page in site.pages %}
+        {% for page in pages_list %}
           {% if page.title %}
           <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
           {% endif %}
         {% endfor %}
       </div>
+
     </nav>
 
   </div>

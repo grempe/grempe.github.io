@@ -5,11 +5,45 @@ layout: default
 
   <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
-    <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+    <p class="post-meta">
+      {{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}<br />
+
+      {% if page.tags.size >= 1 %}
+        tags : {{ page.tags | array_to_sentence_string}}<br />
+      {% endif %}
+
+      {% if page.categories.size >= 1 %}
+        categories : {{ page.categories | array_to_sentence_string}}<br />
+      {% endif %}
+
+      <!-- https://atekihcan.github.io/blog/2014/reading-time-estimate-in-jekyll/ -->
+      {% assign num_words = page.content | strip_html | number_of_words %}
+      {% assign minutes = num_words | divided_by: 200.0 %}
+      {% assign minutes_f = num_words | divided_by: 200.0 %}
+      {% assign minutes_i = num_words | divided_by: 200 %}
+      {% assign diff = minutes_f | minus: minutes_i %}
+
+      {% if diff >= 0.5 %}
+          {% assign minutes = minutes_i + 1 %}
+      {% else %}
+          {% assign minutes = minutes_i %}
+      {% endif %}
+
+      {% if minutes <= 1 %}
+          {% assign reading_time = '1' | append: ' minute' %}
+      {% else %}
+          {% assign reading_time = minutes | append: ' minutes' %}
+      {% endif %}
+
+      reading time : ~{{ reading_time }} ({{ page.content | strip_html | number_of_words }} words @ 200 wpm)
+
+    </p>
   </header>
 
   <article class="post-content">
     {{ content }}
   </article>
+
+  {% include twitter_plug.html %}
 
 </div>
