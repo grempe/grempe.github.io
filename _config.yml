@@ -11,6 +11,9 @@ url: "https://www.rempe.us" # the base hostname & protocol for your site with no
 source_url: "https://github.com/grempe/grempe.github.io" # the location of the source code for this site.
 twitter_username: grempe
 github_username:  grempe
+coinbase_username: grempe
+linkedin_username: grempe
+keybase_username: grempe
 
 # Build settings
 markdown: kramdown
