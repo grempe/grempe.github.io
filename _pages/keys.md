@@ -387,7 +387,3 @@ RWQoTKyaaWHgW90HtwGvvCCTqmTGcUTiEeW+YHxdE4t+ijBEONfEPlpO
 # example usage to verify a file
 minisign -Vm <file> -P RWQoTKyaaWHgW90HtwGvvCCTqmTGcUTiEeW+YHxdE4t+ijBEONfEPlpO
 {% endhighlight %}
-
-
-*This page and my key management techniques were inspired by
-[Joanna Rutkowska's key page](http://blog.invisiblethings.org/keys/){:target="_blank"}.*
