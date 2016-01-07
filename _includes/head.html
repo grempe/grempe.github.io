@@ -5,8 +5,11 @@
 
   <title>{{ site.name }} - {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{{ site.description }}">
-
-  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }} — Feed" href="{{ site.url }}/feed.xml" />
+
+  <!-- protect with sub-resource integrity hash -->
+  <link rel="stylesheet" href="{{ "/css/font-awesome-4.5.0/css/font-awesome.min.css" | prepend: site.baseurl }}" integrity="sha384-5dd61b32767f4232e1ea2238a20a824da223ac593cee2a7e7a422379f65c87463e3ef27c08362d12cd62a4398fa2b43e" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
 </head>
