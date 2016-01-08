@@ -30,7 +30,7 @@ Signature: HwU4i4OFH9rd+MKgvgyERZuhe3CGYztsbhm1Dc5koKV8aCjd/a5IRktDlZJrIqzdiuquG
 
 
 **1D6NkXdtxom9Mkk9pK817c8BA1T5nAd5tb**
-@ [coinbase.com/grempe](https://www.coinbase.com/){:target="_blank"}
+@ [coinbase.com/grempe](https://www.coinbase.com/grempe){:target="_blank"}
 
 {% highlight text %}
 == BEGIN PLAINTEXT MESSAGE ==
