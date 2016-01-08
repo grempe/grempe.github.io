@@ -37,6 +37,8 @@ Signature: H+e3XlLikjMyB8Ba41YkAOzhufI9Ho5WQ1RCc5iBqWU34hLuAhAzBmK5spZ2Mo6KoGFkk
 
 ### Coinbase
 
-Additionally, I have my [coinbase.com/grempe](https://www.coinbase.com/){:target="_blank"}
+Additionally, I have a [coinbase.com/grempe](https://www.coinbase.com/){:target="_blank"}
 profile page which can be used to send funds to a dynamically generated Bitcoin address
-that I control.
+that I control. The proof that I control this account, which is cryptographically
+verifiable, can be found in my [keybase.io/grempe](https://keybase.io/grempe){:target="_blank"}
+profile.
