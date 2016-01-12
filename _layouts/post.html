@@ -8,12 +8,12 @@ layout: default
     <p class="post-meta">
       {{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}<br />
 
-      {% if page.tags.size >= 1 %}
-        tags : {{ page.tags | array_to_sentence_string}}<br />
-      {% endif %}
-
       {% if page.categories.size >= 1 %}
         categories : {{ page.categories | array_to_sentence_string}}<br />
+      {% endif %}
+
+      {% if page.tags.size >= 1 %}
+        tags : {{ page.tags | array_to_sentence_string}}<br />
       {% endif %}
 
       <!-- https://atekihcan.github.io/blog/2014/reading-time-estimate-in-jekyll/ -->
