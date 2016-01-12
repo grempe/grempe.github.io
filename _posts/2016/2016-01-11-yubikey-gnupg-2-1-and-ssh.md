@@ -20,9 +20,14 @@ between the the Yubikey and the `gpg-agent` on OS X.
 
 ## GnuPG Install
 
-I use Homebrew on OS X and installed the latest version (2.1.10) of GnuPG
-with `brew install gnupg21` and `brew install pinentry-mac`. I leave it up to
-you to learn how to install your GPG keys onto the Yubikey.
+I use [Homebrew](http://brew.sh){:target="_blank"} on OS X and installed the latest version (2.1.10) of GnuPG
+Modern using [homebrew-versions](https://github.com/Homebrew/homebrew-versions/blob/master/README.md){:target="_blank"}:
+
+{% highlight text %}
+brew tap homebrew/versions
+brew install gnupg21
+brew install pinentry-mac
+{% endhighlight %}
 
 ## Installing GPG keys on Yubikey
 
