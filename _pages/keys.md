@@ -6,6 +6,10 @@ redirect_from:
   - /pgp/
 ---
 
+Here you can find a variety of public cryptographic keys that you can use to
+send me encrypted messages, or verify digital signatures on code or content I have
+signed.
+
 ## Keybase
 
 [Keybase](https://keybase.io){:target="_blank"} provides a way to claim
