@@ -249,26 +249,26 @@ ControlPlane](http://www.controlplaneapp.com){:target="_blank"} to automate it.
 
 Setup a 'Yubikey' context. This may not be strictly necessary.
 
-![ControlPlane - Contexts](/images/2016-01-11-control-plane/1-contexts.png){:width="300px"}
+![ControlPlane - Contexts]({{ "/images/2016-01-11-control-plane/1-contexts.png" | prepend: site.url }}){:width="300px"}
 
 Make sure the 'Attached USB Device' checkbox is checked on the Evidence Sources tab.
 
-![ControlPlane - Evidence Sources](/images/2016-01-11-control-plane/2-evidence-sources.png){:width="300px"}
+![ControlPlane - Evidence Sources]({{ "/images/2016-01-11-control-plane/2-evidence-sources.png" | prepend: site.url}}){:width="300px"}
 
 On the Rules tab click the **+** to add a rule which is based on the presence
 of the Yubikey. Make sure the Yubikey is plugged in when you select this tab
 so its available in the drop-down.
 
-![ControlPlane - Rules Yubikey](/images/2016-01-11-control-plane/3a-rules-yubikey.png){:width="300px"}
+![ControlPlane - Rules Yubikey]({{ "/images/2016-01-11-control-plane/3a-rules-yubikey.png" | prepend: site.url }}){:width="300px"}
 
-![ControlPlane - Rules](/images/2016-01-11-control-plane/3b-rules.png){:width="300px"}
+![ControlPlane - Rules]({{ "/images/2016-01-11-control-plane/3b-rules.png" | prepend: site.url }}){:width="300px"}
 
 On the Actions tab click the **+** to add a new Action. Provide the full path to
 your shell script and be sure to set the context to the name of the context
 you chose in the first step, no delay, and choose to execute on **both** arrival
 and departure of the Yubikey.
 
-![ControlPlane - Actions](/images/2016-01-11-control-plane/4-actions.png){:width="300px"}
+![ControlPlane - Actions]({{ "/images/2016-01-11-control-plane/4-actions.png" | prepend: site.url }}){:width="300px"}
 
 And that should do it! When you insert or remove the Yubikey you should see
 a notification (and a log entry in the advanced tab of ControlPlane) showing

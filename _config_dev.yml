@@ -1,0 +1,6 @@
+# dev env settings
+# http://stackoverflow.com/questions/27386169/change-site-url-to-localhost-during-jekyll-local-development
+# bundle exec jekyll serve --config _config.yml,_config_dev.yml --watch --safe
+
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://0.0.0.0:4000" # the base hostname & protocol for your site with no trailing slash
