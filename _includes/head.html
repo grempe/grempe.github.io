@@ -2,9 +2,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-  <meta http-equiv="X-Frame-Options" content="DENY">
 
+  <!-- security headers : may or may not work as meta http-equiv and not real headers -->
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+  <meta http-equiv="X-Frame-Options" content="Deny">
+  <meta http-equiv="X-Download-Options" content="noopen">
 
   <title>{{ site.name }} - {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{{ site.description }}">
