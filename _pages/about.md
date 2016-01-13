@@ -35,7 +35,7 @@ few guiding principles. In a word, ***simplicity***.
 * Be secure and **impenetrable** to hacking and resistant to DDoS
 * **Easily deployable** to production
 * Simple content creation
-* All content and code **versionable** in Git, with **signed** commits
+* All content and code **versioned** in Git, with **signed** commits
 * Require minimal or **no operational overhead** (web & database servers)
 * Highly **cacheable** and global CDN friendly
 * Entail **minimal cost**, free preferred

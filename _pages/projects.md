@@ -21,7 +21,7 @@ to rate-limit calls to any service that requires it.
 
 Diceware is used to create cryptographically strong passphrases. It is based
 on the principle that the truly random selection, based on rolls of dice, of
-words in a wordlist can result in easily memorable passwords that are also
+words in a word list can result in easily memorable passwords that are also
 extremely resistant to attack by even the most powerful adversaries. Passwords
 that are six words or longer are thought to be safe for high security applications.
 
@@ -58,7 +58,7 @@ Another implementation of Shamir's Secret Sharing in JavaScript.
 A framework for creating zero-knowledge mobile & desktop applications. You can
 learn more about [crypton.io](https://crypton.io/). I have been an active contributor
 to this project and support its goals of making the use of end-to-end encrypted
-zero-knowledge backends easier for developers to utilize.
+zero-knowledge back ends easier for developers to utilize.
 
 #### [grempe/amazon-ec2](https://github.com/grempe/amazon-ec2){:target="_blank"} (Ruby)
 

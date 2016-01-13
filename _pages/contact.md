@@ -6,7 +6,7 @@ permalink: /contact/
 
 Something I am passionate about is the ability for each of us to communicate freely
 while maintaining a sense of privacy in our communications. The right to privacy
-and security are not something given to us by goverments, they are fundamental
+and security are not something given to us by governments, they are fundamental
 human rights.
 
 Privacy and security are not at odds with each other, and are essential to the
@@ -42,7 +42,7 @@ and send email to me from that account, our emails will be end-to-end encrypted
 
 If you send from another email provider, our messages
 may not be encrypted and may be stored on your mail server un-encrypted. In this
-case please send me PGP encrypted email (inline, not mime attached)
+case please send me PGP encrypted email (in-line, not mime attached)
 using [my PGP public email key](/keys/).
 
 Get a free [ProtonMail](https://protonmail.com) account, its better for everyone.
