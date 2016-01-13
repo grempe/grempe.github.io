@@ -4,6 +4,8 @@
   title: Contact
 - url: /keys/
   title: Crypto Keys
+- url: /btc/
+  title: Bitcoin
 - url: /projects/
   title: Projects
 - url: /resume/
