@@ -106,6 +106,11 @@ Using CloudFlare SSL/TLS certificates I am able to achieve an [**A+** SSL/TLS te
 rating from Qualys SSL Labs](https://www.ssllabs.com/ssltest/analyze.html?d=rempe.us&latest)
 for both IPv4 and IPv6 connections to [www.]rempe.us.
 
+The entire website is also secured with a strict [Content Security Policy](http://www.html5rocks.com/en/tutorials/security/content-security-policy/) that enforces that
+all page assets (HTML, CSS, images, fonts, JavaScript, etc.) are served by the same origin
+server, and all inline scripts and styles are prohibited. Violations are reported
+in real-time via [report-uri.io](https://report-uri.io/).
+
 #### Proof of Ownership
 
 I [host a signed certificate on this site and domain](https://www.rempe.us/keybase.txt)
