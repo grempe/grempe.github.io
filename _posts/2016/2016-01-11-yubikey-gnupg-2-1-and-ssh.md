@@ -48,92 +48,16 @@ Yubikey for SSH.
 
 ## Setup GnuPG Agent for SSH
 
-My primary key has key ID `0xA4A288A3BECCAE17`. I'll use that in my examples below.
+**UPDATE** : December 15, 2016 : It has been brought to my attention that adding a
+keygrip to the `sshcontrol` file is not strictly necessary when using a smart-card
+like the Yubikey. It is apparently only needed when dealing with keys on disk and
+also explains the double entry I was seeing with `ssh-add -l`. I have removed the
+section about discovering your keygrip ID and adding it to `sshcontrol` which
+simplifies this setup a bit.
 
-Edit your key to identify which sub-key is used for authentication. If you don't
-yet have an authentication sub-key I would refer you to the websites above.
-
-{% highlight text %}
-$ gpg2 --key-edit 0xA4A288A3BECCAE17
-gpg (GnuPG) 2.1.10; Copyright (C) 2015 Free Software Foundation, Inc.
-This is free software: you are free to change and redistribute it.
-There is NO WARRANTY, to the extent permitted by law.
-
-Secret key is available.
-
-gpg: TOFU: Ignoring revoked user id (Glenn Rempe <grempe@keybase.io>)
-gpg: TOFU: Ignoring revoked user id (Glenn Rempe <grempe@keybase.io>)
-sec  rsa4096/0xA4A288A3BECCAE17
-     created: 2014-10-02  expires: 2019-10-01  usage: C
-     validity: ultimate
-The following key was revoked on 2015-06-04 by RSA key 0xA4A288A3BECCAE17 Glenn Rempe <glenn@rempe.us>
-ssb  rsa4096/0xE7166A77CF97D091
-     created: 2014-10-02  revoked: 2015-06-04  usage: S
-The following key was revoked on 2015-06-04 by RSA key 0xA4A288A3BECCAE17 Glenn Rempe <glenn@rempe.us>
-ssb  rsa4096/0xD1640B9CDB415269
-     created: 2014-10-02  revoked: 2015-06-04  usage: E
-The following key was revoked on 2015-06-04 by RSA key 0xA4A288A3BECCAE17 Glenn Rempe <glenn@rempe.us>
-ssb  rsa4096/0x64360AFCB987E507
-     created: 2014-10-02  revoked: 2015-06-04  usage: A
-ssb  rsa2048/0x85C81023D9E3FC2F
-     created: 2015-06-04  expires: 2019-09-11  usage: S
-     card-no: 0006 00000000
-ssb  rsa2048/0x2992317D667E3936
-     created: 2015-06-04  expires: 2019-09-11  usage: E
-     card-no: 0006 00000000
-ssb  rsa2048/0x19EA4BEADCC31080
-     created: 2015-06-04  expires: 2019-09-11  usage: A
-     card-no: 0006 00000000
-[ultimate] (1). Glenn Rempe <glenn@rempe.us>
-[ revoked] (2)  Glenn Rempe <grempe@keybase.io>
-[ultimate] (3)  [jpeg image of size 1740]
-{% endhighlight %}
-
-Find the sub-key with `usage: A` next to it. That is your Authentication sub-key
-and is the one you will use for SSH. In my case it is `rsa2048/0x19EA4BEADCC31080`
-
-Now, view your key with the additional Keygrip data you'll need for SSH.
-
-{% highlight text %}
-~$ gpg2 --with-keygrip -k 0xA4A288A3BECCAE17
-pub   rsa4096/0xA4A288A3BECCAE17 2014-10-02 [expires: 2019-10-01]
-      Key fingerprint = 497A 6138 963D 6C47 202B  238B A4A2 88A3 BECC AE17
-      Keygrip = 5E485AA4FB7C25BE7F8FE3A095670CD7DE9164EE
-uid                   [ultimate] Glenn Rempe <glenn@rempe.us>
-uid                   [ultimate] [jpeg image of size 1740]
-sub   rsa2048/0x85C81023D9E3FC2F 2015-06-04 [expires: 2019-09-11]
-      Keygrip = 2CB90393A5D834F5B329C5EB55E0C6378ACAC003
-sub   rsa2048/0x2992317D667E3936 2015-06-04 [expires: 2019-09-11]
-      Keygrip = C5A98DAB4F5C1D355E05988BFA7449CCC75B5173
-sub   rsa2048/0x19EA4BEADCC31080 2015-06-04 [expires: 2019-09-11]
-      Keygrip = 12206385C2B0A6B8534ED6F0D235EC0C727E5146
-{% endhighlight %}
-
-In my case, since the authentication sub-key is `rsa2048/0x19EA4BEADCC31080` I
-need Keygrip `12206385C2B0A6B8534ED6F0D235EC0C727E5146`.
-
-Add the Keygrip for this auth sub-key to the file `~/.gnupg/sshcontrol`
-
-{% highlight text %}
-$ cat ~/.gnupg/sshcontrol
-# List of allowed ssh keys.  Only keys present in this file are used
-# in the SSH protocol.  The ssh-add tool may add new entries to this
-# file to enable them; you may also add them manually.  Comment
-# lines, like this one, as well as empty lines are ignored.  Lines do
-# have a certain length limit but this is not serious limitation as
-# the format of the entries is fixed and checked by gpg-agent. A
-# non-comment line starts with optional white spaces, followed by the
-# keygrip of the key given as 40 hex digits, optionally followed by a
-# caching TTL in seconds, and another optional field for arbitrary
-# flags.   Prepend the keygrip with an '!' mark to disable it.
-
-# authentication sub-key keygrip for Yubikey KeyID 0xA4A288A3BECCAE17
-12206385C2B0A6B8534ED6F0D235EC0C727E5146
-{% endhighlight %}
-
-Now, tell configure your `gpg-agent` to start with SSH support in
+Configure your `gpg-agent` to start with SSH support in
 `~/.gnupg/gpg-agent.conf` by adding the `enable-ssh-support` entry. Here's
-my config.
+my config (which also makes use of the pinentry-mac package we installed earlier).
 
 {% highlight text %}
 default-cache-ttl 900
@@ -142,7 +66,7 @@ pinentry-program /usr/local/bin/pinentry-mac
 enable-ssh-support
 {% endhighlight %}
 
-Lastly, configure all of your terminal shell environments to have an appropriate
+Next, configure all of your shell environment to have an appropriate
 `SSH_AUTH_SOCK` environment variable. Here are the relevant lines
 from my `~/.zshrc`. You'll want to source your config file or close
 and open a new terminal window after this change.
@@ -155,7 +79,10 @@ export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh
 ...
 {% endhighlight %}
 
-Remove your Yubikey, and restart your `gpg-agent` process, and then re-insert your key.
+Ensure your Yubikey is removed and restart your `gpg-agent` process,
+then re-insert your Yubikey. Alternatively, run `killall gpg-agent`.
+You may want to also confirm that you no longer have any `ssh-agent` processes
+running. `ssh-agent` is no longer used at all with this setup.
 
 {% highlight text %}
 * remove key *
@@ -163,32 +90,24 @@ Remove your Yubikey, and restart your `gpg-agent` process, and then re-insert yo
 * insert key *
 {% endhighlight %}
 
-Running `gpg2 --card-status` should display all of the info for your Yubikey and
-the keys you have installed on it.
+Running `gpg2 --card-status` should display a summary of your Yubikey config
+including the keys you have installed on it.
 
-If you have reached this point, you are almost ready to go. Your GPG keys are
-on your Yubikey, the `gpg-agent` is running and ready to support your SSH client,
-and all that you need to do is reveal your SSH public key so you can add it
-to the `authorized_keys` file on your remote server you want to access with SSH.
+Now you are almost ready to go. Your GPG keys are on your Yubikey, the `gpg-agent`
+is running and ready to support your SSH client, and all that you need to do is
+reveal your SSH public key so you can add it to the `authorized_keys` file on
+your remote server you want to access with SSH.
 
 {% highlight text %}
-~$ ssh-add -L
 error fetching identities for protocol 1: agent refused operation
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCms1sSkTyI6SUCPxMTiF8gr79+aKu7+eHHVl6fN36HACaTxSouTH3m4cfRc+tZUc3xBxMw5dIsHqD0dAahE/1uDlm+T9uxw9H+m5DpX3sZc/ZR9OYAtGmjpNp8Qa+dS1LnbuIDhF5WziFjekbXnp/WAGO+06sXw3Prelhk26RSEDInj2pGubzEFDqcr1YJHHa/9Ym9vQGboVGUnw9AaoG4GUOAJ1ZEG0S3tgqM8x4u90eynVd0T5e/SExX8zyvtivJWz6Pul84uVf7jcJJ7XGx6592alY4KmrhTauJeOB+YVmQdId7D/Iz9U1Kn45bQAtM4hTt6FPbU5MJmHK7YymF cardno:000600000000
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCms1sSkTyI6SUCPxMTiF8gr79+aKu7+eHHVl6fN36HACaTxSouTH3m4cfRc+tZUc3xBxMw5dIsHqD0dAahE/1uDlm+T9uxw9H+m5DpX3sZc/ZR9OYAtGmjpNp8Qa+dS1LnbuIDhF5WziFjekbXnp/WAGO+06sXw3Prelhk26RSEDInj2pGubzEFDqcr1YJHHa/9Ym9vQGboVGUnw9AaoG4GUOAJ1ZEG0S3tgqM8x4u90eynVd0T5e/SExX8zyvtivJWz6Pul84uVf7jcJJ7XGx6592alY4KmrhTauJeOB+YVmQdId7D/Iz9U1Kn45bQAtM4hTt6FPbU5MJmHK7YymF (none)
 {% endhighlight %}
 
-In this case, three lines are being printed. The first error line is something
+In my case, two lines are printed. The first error line is something
 I have not figured out how to remove yet but it does not seem to affect
-functionality. The second and third lines in my case are both the same public
-key and differ only in the comment field at the end.  I grabbed the last line
-and pasted that into the `authorized_keys` file on my remote machine and changed
-the comment field to indicate that this key was for my Yubikey.
-
-
-{% highlight text %}
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCms1sSkTyI6SUCPxMTiF8gr79+aKu7+eHHVl6fN36HACaTxSouTH3m4cfRc+tZUc3xBxMw5dIsHqD0dAahE/1uDlm+T9uxw9H+m5DpX3sZc/ZR9OYAtGmjpNp8Qa+dS1LnbuIDhF5WziFjekbXnp/WAGO+06sXw3Prelhk26RSEDInj2pGubzEFDqcr1YJHHa/9Ym9vQGboVGUnw9AaoG4GUOAJ1ZEG0S3tgqM8x4u90eynVd0T5e/SExX8zyvtivJWz6Pul84uVf7jcJJ7XGx6592alY4KmrhTauJeOB+YVmQdId7D/Iz9U1Kn45bQAtM4hTt6FPbU5MJmHK7YymF (yubikey)
-{% endhighlight %}
+any functionality. Grab the last line starting with `ssh-rsa` and paste
+that into the `authorized_keys` file on the remote machine you want to SSH to.
+This should be one long line and should contain no line breaks.
 
 [Here is what the docs say](https://gnupg.org/faq/whats-new-in-2.1.html){:target="_blank"}
 about the behavior of `gpg-agent` in the context of SSH. This is important to understand.
@@ -204,6 +123,10 @@ for the user PIN for your Yubikey to unlock it, and once you enter that PIN you
 should succeed in your ssh login.
 
 ## Problems?
+
+**UPDATE** : December 15, 2016 : I am working through this issue in the gnupg-users
+mailing list. You can follow along with the discussion thread  [here](https://lists.gnupg.org/pipermail/gnupg-users/2016-January/054988.html){:target="_blank"}.
+I'll update this post again if there is a resolution to this issue.
 
 I ran into one major problem with this setup. It seems that if the `gpg-agent`
 is running and you remove your Yubikey and re-insert it, the `gpg-agent` will
@@ -280,5 +203,5 @@ every time you insert the Yubikey.
 Please do [let me know](https://github.com/grempe/grempe.github.io/issues) and
 I'll be sure to try out your ideas and document them here if they improve things.
 
-Now all thats left is to migrate that collection of SSH
-public keys you have over to your new GPG/SSH key to rule them all. Enjoy!
+Now all that is remaining is to migrate that collection of SSH
+public keys you have now over to your new GPG/SSH key to rule them all. Enjoy!
