@@ -59,6 +59,19 @@ text, picture, and video messages. If you have my mobile number in your phone's 
 you can reach me with Signal. If you need my phone number to contact me
 via Signal please request it via email.
 
+My Fingerprint (mobile phone):
+
+{% highlight text %}
+05 22 c2 83 26 44 ac 16 7d
+ff 3f a8 42 95 21 74 01 85
+a9 e4 f5 04 40 04 8a 9f 5a
+94 65 c9 22 9f 76
+{% endhighlight %}
+
+[How do I verify your fingerprint?](https://github.com/WhisperSystems/Signal-iOS/wiki/FAQ){:target="_blank"}
+Within a Signal conversation, do a long press on my name at the top of the window.
+It will show both my fingerprint and yours.
+
 *Supports : Text Messaging / Voice Calls / Photos / Videos*
 
 ### Apple FaceTime
