@@ -284,10 +284,17 @@ Find some additional info on this email key and its position in the Web of Trust
 
 #### Signed Commits
 
-You can verify git commit signatures on this blog, or other code I may have signed,
-by first installing the appropriate signing key in your local GnuPG keyring. Once
-that step is done you can make a local clone of a signed repository, and view the
-commit log to verify signatures.
+For any code stored on GitHub they [now support verifying PGP signed commits](https://github.com/blog/2144-gpg-signature-verification)
+directly in the GitHub user interface. Just
+[visit the commits view for any repo where I have signed commits](https://github.com/grempe/grempe.github.io/commits/master)
+and you'll see which commits are able to be verified with one of my verified keys
+right there in the UI. No need to install GnuPG, download keys, or hunt down
+git commands to view those keys. Thanks GitHub.
+
+Alternatively, you can verify git commit signatures on this blog, or other code
+I may have signed, using the old school methods. First install the appropriate
+signing key in your local GnuPG keyring, make a local clone of a signed
+repository, and view the commit log to verify signatures.
 
 {% highlight text %}
 # download and install a signing key to your local system
