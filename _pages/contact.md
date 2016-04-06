@@ -74,6 +74,22 @@ It will show both my fingerprint and yours.
 
 *Supports : Text Messaging / Voice Calls / Photos / Videos*
 
+### WhatsApp
+
+WhatsApp, at least as of the
+[rollout of end-to-end encryption on 4/5/2016](https://blog.whatsapp.com/10000618/end-to-end-encryption),
+doesn't make it too easy to verify your fingerprint out-of-band.
+
+If you're connected with me on WhatsApp, view the verification UI with the QR code
+and the 60 digit long fingerprint. My portion of the fingerprint will be
+either the first six, or the last six blocks (30 digits) of that verifier. Your
+portion of the fingerprint is the other six blocks. One of:
+
+```
+56143 41025 77814 55362 45113 58854 + YOURS
+YOURS + 56143 41025 77814 55362 45113 58854
+```
+
 ### Apple FaceTime
 
 I use [Apple FaceTime](https://www.apple.com/ios/facetime/) extensively. You can
