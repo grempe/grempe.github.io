@@ -12,7 +12,7 @@ active.
 
 The source code for this website.
 
-#### [grempe/tss](https://github.com/grempe/tss-rb){:target="_blank"} (Ruby)
+#### [grempe/tss-rb](https://github.com/grempe/tss-rb){:target="_blank"} (Ruby)
 
 Threshold Secret Sharing (TSS) provides a way to generate N shares
 from a value, so that any M of those shares can be used to
