@@ -74,11 +74,11 @@ Github page at [grempe.github.io](https://grempe.github.io/).
 
 My DNS server is configured with the following records that point to Github servers:
 
-{% highlight text %}
+``` text
 CNAME www.rempe.us -> grempe.github.io
 A         rempe.us -> 192.30.252.153
 A         rempe.us -> 192.30.252.154
-{% endhighlight %}
+```
 
 With this DNS configuration, Github becomes the canonical host for [www.]rempe.us.
 The rempe.us apex domain redirects to www.rempe.us

@@ -61,12 +61,12 @@ via Signal please request it via email.
 
 My Fingerprint (mobile phone):
 
-{% highlight text %}
+``` text
 05 22 c2 83 26 44 ac 16 7d
 ff 3f a8 42 95 21 74 01 85
 a9 e4 f5 04 40 04 8a 9f 5a
 94 65 c9 22 9f 76
-{% endhighlight %}
+```
 
 [How do I verify your fingerprint?](https://github.com/WhisperSystems/Signal-iOS/wiki/FAQ){:target="_blank"}
 Within a Signal conversation, do a long press on my name at the top of the window.
@@ -85,7 +85,7 @@ and the 60 digit long fingerprint. My portion of the fingerprint will be
 either the first six, or the last six blocks (30 digits) of that verifier. Your
 portion of the fingerprint is the other six blocks. One of:
 
-```
+``` text
 56143 41025 77814 55362 45113 58854 + YOURS
 YOURS + 56143 41025 77814 55362 45113 58854
 ```
@@ -103,16 +103,16 @@ to your contacts on your Mac or iOS device.
 
 Learn more about [using XMPP+OTR+TOR in a great article](https://theintercept.com/2015/07/14/communicating-secret-watched/){:target="_blank"} by Micah Lee. Please contact me in advance if you wish to chat via XMPP + OTR.
 
-{% highlight text %}
+``` text
 XMPP/Jabber Address: grempe@xmpp-hosting.de
 XMPP Provider:       https://jabber.hot-chilli.net/
 OTR Fingerprint:     C30A3B09 C7C0240A 5A0033CA B99267F1 642354B0
-{% endhighlight %}
+```
 
-{% highlight text %}
+``` text
 XMPP/Jabber Address: glenn@rempe.us
 XMPP Provider:       Google Talk (Not federated XMPP)
 OTR Fingerprint:     3A93A6EF 7A8A8850 52525538 09BDBBB9 76E93502
-{% endhighlight %}
+```
 
 *Supports : Text Messaging*

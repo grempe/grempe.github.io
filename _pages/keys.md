@@ -42,13 +42,13 @@ currently valid key claiming to be mine is not also signed by the `Master Signin
 then you should not consider it valid without consulting with me first over a trusted
 channel.
 
-{% highlight text %}
+``` text
 |                          Master Signing Key
 |                                  +
 |           +----------------------------------------------+
 |           +                      +                       +
 |   Email Key (1..n)        Blog Signing Key       Code Signing Key
-{% endhighlight %}
+```
 
 Since this entire repository is signed, either at commit time or with a signed tag, any
 content that is found within can be implicitly trusted if the signatures are valid.
@@ -58,16 +58,16 @@ content that is found within can be implicitly trusted if the signatures are val
 You can install all of my current signing and email keys by running the following command.
 You should then verify the fingerprint for each key with the key data I have enclosed below.
 
-{% highlight text %}
+``` text
 gpg2 --keyserver pgp.mit.edu --recv-keys 0x63608B66C0929A67 0x37B8284B4B3EBE74 0x2C4C3C144301224F 0xA4A288A3BECCAE17
-{% endhighlight %}
+```
 
 You will then also need to run `gpg2 --edit-key KEYID` for each key and choose the `trust`
 option which will allow you to specify the `ownertrust` level you want to assign to each of
 my keys. Hopefully you will feel comfortable choosing `I trust fully`. Here is an example
 session for a single key.
 
-{% highlight text %}
+``` text
 $ gpg2 --edit-key C0929A67
 gpg (GnuPG) 2.1.9; Copyright (C) 2015 Free Software Foundation, Inc.
 This is free software: you are free to change and redistribute it.
@@ -105,8 +105,7 @@ Please note that the shown key validity is not necessarily correct
 unless you restart the program.
 
 gpg> quit
-{% endhighlight %}
-
+```
 
 ### Master Signing Key
 
@@ -115,7 +114,7 @@ are signed by this master key. The master key is kept offline and is never used 
 anything but signing my other keys. Verifying the presence of this key signature is the
 strongest way to determine if a key is indeed mine.
 
-{% highlight text %}
+``` text
 pub   rsa4096/0x63608B66C0929A67 2015-12-27
       Key fingerprint = 1C01 711C 3A0F 691D 11A9  D8BE 6360 8B66 C092 9A67
 uid                   [ultimate] Glenn Rempe (Master Signing Key) <glenn@rempe.us>
@@ -123,29 +122,28 @@ uid                   [ultimate] Glenn Rempe (Master Signing Key) <glenn@rempe.u
 gpg> check
 uid  Glenn Rempe (Master Signing Key) <glenn@rempe.us>
 sig!3        0x63608B66C0929A67 2015-12-27  [self-signature]
-{% endhighlight %}
+```
 
 #### Install Key [0x63608B66C0929A67.asc](/downloads/keys/0x63608B66C0929A67.asc)
 
 from keyserver (w/ any third party signatures):
 
-{% highlight text %}
+``` text
 gpg2 --keyserver pgp.mit.edu --recv-key 0x63608B66C0929A67
-{% endhighlight %}
+```
 
 from this server:
 
-{% highlight text %}
+``` text
 gpg2 --fetch-keys http://www.rempe.us/downloads/keys/0x63608B66C0929A67.asc
-{% endhighlight %}
+```
 
 manually:
 
-{% highlight text %}
+``` text
 wget https://www.rempe.us/downloads/keys/0x63608B66C0929A67.asc
 gpg2 --import 0x63608B66C0929A67.asc
-{% endhighlight %}
-
+```
 
 ### Blog Signing Key
 
@@ -153,7 +151,7 @@ The following key is used to sign this blog repository. Signatures applied to
 commits or tags can be cryptographically verified using the [GPG signing functionality
 built into Git](http://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work){:target="_blank"}.
 
-{% highlight text %}
+``` text
 pub   rsa4096/0x37B8284B4B3EBE74 2015-12-27
       Key fingerprint = A866 1C60 4BFD 85DE 26B7  80E5 37B8 284B 4B3E BE74
 uid                   [ultimate] Glenn Rempe (Blog Signing Key) <glenn@rempe.us>
@@ -162,35 +160,34 @@ gpg> check
 uid  Glenn Rempe (Blog Signing Key) <glenn@rempe.us>
 sig!3        0x37B8284B4B3EBE74 2015-12-27  [self-signature]
 sig!         0x63608B66C0929A67 2015-12-27  Glenn Rempe (Master Signing Key)
-{% endhighlight %}
+```
 
 #### Install Key [0x37B8284B4B3EBE74.asc](/downloads/keys/0x37B8284B4B3EBE74.asc)
 
 from keyserver (w/ any third party signatures):
 
-{% highlight text %}
+``` text
 gpg2 --keyserver pgp.mit.edu --recv-key 0x37B8284B4B3EBE74
-{% endhighlight %}
+```
 
 from this server:
 
-{% highlight text %}
+``` text
 gpg2 --fetch-keys http://www.rempe.us/downloads/keys/0x37B8284B4B3EBE74.asc
-{% endhighlight %}
+```
 
 manually:
 
-{% highlight text %}
+``` text
 wget https://www.rempe.us/downloads/keys/0x37B8284B4B3EBE74.asc
 gpg2 --import 0x37B8284B4B3EBE74.asc
-{% endhighlight %}
-
+```
 
 ### Code Signing Key
 
 The following key is used to sign code and general Git commits:
 
-{% highlight text %}
+``` text
 pub   rsa4096/0x2C4C3C144301224F 2015-12-27
       Key fingerprint = FCDD 20FD D083 C84A 5C64  0405 2C4C 3C14 4301 224F
 uid                   [ultimate] Glenn Rempe (Code Signing Key) <glenn@rempe.us>
@@ -199,36 +196,35 @@ gpg> check
 uid  Glenn Rempe (Code Signing Key) <glenn@rempe.us>
 sig!3        0x2C4C3C144301224F 2015-12-27  [self-signature]
 sig!         0x63608B66C0929A67 2015-12-27  Glenn Rempe (Master Signing Key)
-{% endhighlight %}
+```
 
 #### Install Key [0x2C4C3C144301224F.asc](/downloads/keys/0x2C4C3C144301224F.asc)
 
 from keyserver (w/ any third party signatures):
 
-{% highlight text %}
+``` text
 gpg2 --keyserver pgp.mit.edu --recv-key 0x2C4C3C144301224F
-{% endhighlight %}
+```
 
 from this server:
 
-{% highlight text %}
+``` text
 gpg2 --fetch-keys http://www.rempe.us/downloads/keys/0x2C4C3C144301224F.asc
-{% endhighlight %}
+```
 
 manually:
 
-{% highlight text %}
+``` text
 wget https://www.rempe.us/downloads/keys/0x2C4C3C144301224F.asc
 gpg2 --import 0x2C4C3C144301224F.asc
-{% endhighlight %}
-
+```
 
 ### Email Key
 
 The following key is used for encryption and digital signatures of email or files.
 It is also the key I use for signing other people's keys in the Web of Trust (WOT):
 
-{% highlight text %}
+``` text
 pub   rsa4096/0xA4A288A3BECCAE17 2014-10-02 [expires: 2019-10-01]
       Key fingerprint = 497A 6138 963D 6C47 202B  238B A4A2 88A3 BECC AE17
 uid                   [  full  ] Glenn Rempe <glenn@rempe.us>
@@ -249,28 +245,28 @@ sig!         0x63608B66C0929A67 2015-12-27  Glenn Rempe (Master Signing Key)
 uid  [jpeg image of size 1740]
 sig!3        0xA4A288A3BECCAE17 2014-10-02  [self-signature]
 sig!         0x63608B66C0929A67 2015-12-27  Glenn Rempe (Master Signing Key)
-{% endhighlight %}
+```
 
 #### Install Key [0xA4A288A3BECCAE17.asc](/downloads/keys/0xA4A288A3BECCAE17.asc)
 
 from keyserver (w/ any third party signatures):
 
-{% highlight text %}
+``` text
 gpg2 --keyserver pgp.mit.edu --recv-key 0xA4A288A3BECCAE17
-{% endhighlight %}
+```
 
 from this server:
 
-{% highlight text %}
+``` text
 gpg2 --fetch-keys http://www.rempe.us/downloads/keys/0xA4A288A3BECCAE17.asc
-{% endhighlight %}
+```
 
 manually:
 
-{% highlight text %}
+``` text
 wget https://www.rempe.us/downloads/keys/0xA4A288A3BECCAE17.asc
 gpg2 --import 0xA4A288A3BECCAE17.asc
-{% endhighlight %}
+```
 
 Find some additional info on this email key and its position in the Web of Trust:
 
@@ -296,7 +292,7 @@ I may have signed, using the old school methods. First install the appropriate
 signing key in your local GnuPG keyring, make a local clone of a signed
 repository, and view the commit log to verify signatures.
 
-{% highlight text %}
+``` text
 # download and install a signing key to your local system
 # (see instructions above)
 
@@ -306,12 +302,12 @@ $ cd grempe.github.io
 
 # view the log showing any signatures associated with commits
 $ git log --show-signature
-{% endhighlight %}
+```
 
 A good signature on a commit looks like this example. A signature on a commit
 secures the chain of all previous commits reachable by that commit.
 
-{% highlight text %}
+``` text
 commit 29c1b16c4397cda5d6cd03401052300752197eb8
 gpg: Signature made Mon Dec 28 11:25:00 2015 PST
 gpg:                using RSA key 0x37B8284B4B3EBE74
@@ -321,7 +317,7 @@ Author: Glenn Rempe <glenn@rempe.us>
 Date:   Mon Dec 28 11:24:59 2015 -0800
 
     Change title to rempe.us
-{% endhighlight %}
+```
 
 #### Signed Tags
 
@@ -332,7 +328,7 @@ Install a signing key as shown above, list all tags with `git tag --list` and
 verify any individual tag with `git tag -v TAGNAME` where `TAGNAME` is one of the
 listed tags. Here is an example:
 
-{% highlight text %}
+``` text
 # view all tags
 $ git tag -l
 v1.0.0-beta
@@ -349,8 +345,7 @@ gpg: Signature made Mon Dec 28 12:03:18 2015 PST
 gpg:                using RSA key 0x37B8284B4B3EBE74
 gpg: Good signature from "Glenn Rempe (Blog Signing Key) <glenn@rempe.us>" [ultimate]
 Primary key fingerprint: A866 1C60 4BFD 85DE 26B7  80E5 37B8 284B 4B3E BE74
-{% endhighlight %}
-
+```
 
 ### Note : my signing keys do not expire
 
@@ -376,10 +371,9 @@ you can encrypt files to friends using their miniLock IDs. miniLock is a pretty
 simple way to encrypt any document and can be used by almost anyone. Your miniLock
 public key is small enough to fit in a Tweet. Here is mine.
 
-{% highlight text %}
+``` text
 2Gas5UUw2piLwcHYcmmnRqJnCXADvnRBVT8TEAeVrfPZHw
-{% endhighlight %}
-
+```
 
 ### Minisign
 
@@ -390,11 +384,11 @@ Any files I may sign with Minisign with be accompanied by a corresponding `*.min
 
 You can verify the signature using my Minisign public key:
 
-{% highlight text %}
+``` text
 RWQoTKyaaWHgW90HtwGvvCCTqmTGcUTiEeW+YHxdE4t+ijBEONfEPlpO
-{% endhighlight %}
+```
 
-{% highlight text %}
+``` text
 # example usage to verify a file
 minisign -Vm <file> -P RWQoTKyaaWHgW90HtwGvvCCTqmTGcUTiEeW+YHxdE4t+ijBEONfEPlpO
-{% endhighlight %}
+```

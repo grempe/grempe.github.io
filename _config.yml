@@ -18,6 +18,10 @@ keybase_username: grempe
 # Build settings
 markdown: kramdown
 
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
 # store static markdown pages in _pages/
 include: ['_pages']
 relative_permalinks: false

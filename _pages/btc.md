@@ -18,13 +18,13 @@ to verify each signature.
 **16sc7ieccdHLVcqZfYyEvqfCuPxaKwJau4**
 @ Private Wallet
 
-{% highlight text %}
+``` text
 == BEGIN PLAINTEXT MESSAGE ==
 The BTC address 16sc7ieccdHLVcqZfYyEvqfCuPxaKwJau4 is owned by Glenn Rempe <glenn@rempe.us>. EOM
 == END PLAINTEXT MESSAGE ==
 Signed with address: 16sc7ieccdHLVcqZfYyEvqfCuPxaKwJau4
 Signature: HwU4i4OFH9rd+MKgvgyERZuhe3CGYztsbhm1Dc5koKV8aCjd/a5IRktDlZJrIqzdiuquGhZHxYvz6RwBnnh/Ohc=
-{% endhighlight %}
+```
 
 ![btc-16sc7ieccdHLVcqZfYyEvqfCuPxaKwJau4.png](/images/btc-16sc7ieccdHLVcqZfYyEvqfCuPxaKwJau4.png)
 
@@ -32,13 +32,13 @@ Signature: HwU4i4OFH9rd+MKgvgyERZuhe3CGYztsbhm1Dc5koKV8aCjd/a5IRktDlZJrIqzdiuquG
 **1D6NkXdtxom9Mkk9pK817c8BA1T5nAd5tb**
 @ [coinbase.com/grempe](https://www.coinbase.com/grempe){:target="_blank"}
 
-{% highlight text %}
+``` text
 == BEGIN PLAINTEXT MESSAGE ==
 The BTC address 1D6NkXdtxom9Mkk9pK817c8BA1T5nAd5tb is owned by Glenn Rempe <glenn@rempe.us>. EOM
 == END PLAINTEXT MESSAGE ==
 Signed with address: 1D6NkXdtxom9Mkk9pK817c8BA1T5nAd5tb
 Signature: H+e3XlLikjMyB8Ba41YkAOzhufI9Ho5WQ1RCc5iBqWU34hLuAhAzBmK5spZ2Mo6KoGFkkM4zwD9yMEr0QE20Nkg=
-{% endhighlight %}
+```
 
 ![btc-1D6NkXdtxom9Mkk9pK817c8BA1T5nAd5tb.png](/images/btc-1D6NkXdtxom9Mkk9pK817c8BA1T5nAd5tb.png)
 

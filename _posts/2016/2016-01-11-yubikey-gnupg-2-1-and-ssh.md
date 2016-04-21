@@ -23,11 +23,11 @@ between the the Yubikey and the `gpg-agent` on OS X.
 I use [Homebrew](http://brew.sh){:target="_blank"} on OS X and installed the latest version (2.1.10) of GnuPG
 Modern using [homebrew-versions](https://github.com/Homebrew/homebrew-versions/blob/master/README.md){:target="_blank"}:
 
-{% highlight text %}
+``` text
 brew tap homebrew/versions
 brew install gnupg21
 brew install pinentry-mac
-{% endhighlight %}
+```
 
 ## Installing GPG keys on Yubikey
 
@@ -59,36 +59,36 @@ Configure your `gpg-agent` to start with SSH support in
 `~/.gnupg/gpg-agent.conf` by adding the `enable-ssh-support` entry. Here's
 my config (which also makes use of the pinentry-mac package we installed earlier).
 
-{% highlight text %}
+``` text
 default-cache-ttl 900
 max-cache-ttl 999999
 pinentry-program /usr/local/bin/pinentry-mac
 enable-ssh-support
-{% endhighlight %}
+```
 
 Next, configure all of your shell environment to have an appropriate
 `SSH_AUTH_SOCK` environment variable. Here are the relevant lines
 from my `~/.zshrc`. You'll want to source your config file or close
 and open a new terminal window after this change.
 
-{% highlight text %}
+``` text
 ...
 # GPG 2.1.x SSH support
 # See : http://incenp.org/notes/2015/gnupg-for-ssh-authentication.html
 export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh
 ...
-{% endhighlight %}
+```
 
 Ensure your Yubikey is removed and restart your `gpg-agent` process,
 then re-insert your Yubikey. Alternatively, run `killall gpg-agent`.
 You may want to also confirm that you no longer have any `ssh-agent` processes
 running. `ssh-agent` is no longer used at all with this setup.
 
-{% highlight text %}
+``` text
 * remove key *
 /usr/local/bin/gpgconf --kill gpg-agent && /usr/local/bin/gpgconf --launch gpg-agent
 * insert key *
-{% endhighlight %}
+```
 
 Running `gpg2 --card-status` should display a summary of your Yubikey config
 including the keys you have installed on it.
@@ -98,10 +98,10 @@ is running and ready to support your SSH client, and all that you need to do is
 reveal your SSH public key so you can add it to the `authorized_keys` file on
 your remote server you want to access with SSH.
 
-{% highlight text %}
+``` text
 error fetching identities for protocol 1: agent refused operation
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCms1sSkTyI6SUCPxMTiF8gr79+aKu7+eHHVl6fN36HACaTxSouTH3m4cfRc+tZUc3xBxMw5dIsHqD0dAahE/1uDlm+T9uxw9H+m5DpX3sZc/ZR9OYAtGmjpNp8Qa+dS1LnbuIDhF5WziFjekbXnp/WAGO+06sXw3Prelhk26RSEDInj2pGubzEFDqcr1YJHHa/9Ym9vQGboVGUnw9AaoG4GUOAJ1ZEG0S3tgqM8x4u90eynVd0T5e/SExX8zyvtivJWz6Pul84uVf7jcJJ7XGx6592alY4KmrhTauJeOB+YVmQdId7D/Iz9U1Kn45bQAtM4hTt6FPbU5MJmHK7YymF cardno:000600000000
-{% endhighlight %}
+```
 
 In my case, two lines are printed. The first error line is something
 I have not figured out how to remove yet but it does not seem to affect
@@ -140,9 +140,9 @@ inserted.
 The only way I could discover to fix this was to kill and restart `gpg-agent` after
 each Yubikey insertion.
 
-{% highlight text %}
+``` text
 gpgconf --kill gpg-agent && gpgconf --launch gpg-agent
-{% endhighlight %}
+```
 
 Of course this is a PITA. There has to be a better way.
 
@@ -159,10 +159,10 @@ or removed.
 I added the following shell script (make sure it is `chmod 700`) to
 `~/bin/gpg-agent-restart.sh`.
 
-{% highlight text %}
+``` text
 #!/bin/bash
 /usr/local/bin/gpgconf --kill gpg-agent && /usr/local/bin/gpgconf --launch gpg-agent
-{% endhighlight %}
+```
 
 You can test that this technique will work for you by running that script manually
 after a removal and re-insertion of the Yubikey. If it does, then you can [install
