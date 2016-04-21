@@ -124,7 +124,7 @@ should succeed in your ssh login.
 
 ## Problems?
 
-**UPDATE** : December 15, 2016 : I am working through this issue in the gnupg-users
+**UPDATE** : January 15, 2016 : I am working through this issue in the gnupg-users
 mailing list. You can follow along with the discussion thread  [here](https://lists.gnupg.org/pipermail/gnupg-users/2016-January/054988.html){:target="_blank"}.
 I'll update this post again if there is a resolution to this issue.
 
