@@ -48,7 +48,7 @@ Yubikey for SSH.
 
 ## Setup GnuPG Agent for SSH
 
-**UPDATE** : December 15, 2016 : It has been brought to my attention that adding a
+**UPDATE** : January 15, 2016 : It has been brought to my attention that adding a
 keygrip to the `sshcontrol` file is not strictly necessary when using a smart-card
 like the Yubikey. It is apparently only needed when dealing with keys on disk and
 also explains the double entry I was seeing with `ssh-add -l`. I have removed the
