@@ -40,6 +40,7 @@ gems:
   - jekyll-sitemap
   - jekyll-mentions
   - jekyll-paginate
+  - jekyll-seo-tag
 whitelist:
   - jekyll-redirect-from
   - jekyll-sitemap
@@ -47,3 +48,7 @@ whitelist:
 
 jekyll-mentions:
   base_url: https://twitter.com
+
+# SEO
+twitter:
+  username: grempe
