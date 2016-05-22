@@ -12,6 +12,17 @@ active.
 
 The source code for this website.
 
+#### [grempe/sirp](https://github.com/grempe/sirp){:target="_blank"} (Ruby)
+
+SiRP is a pure Ruby implementation of the Secure Remote Password
+protocol (SRP-6a), which is a 'zero-knowledge' mutual authentication system.
+
+SRP is a protocol that allows for mutual authentication of a client and
+server over an insecure network connection without revealing the password
+to the server or an eavesdropper.
+
+There is a [live demo version](https://sirp-demo.herokuapp.com/index.html) you can try.
+
 #### [grempe/tss-rb](https://github.com/grempe/tss-rb){:target="_blank"} (Ruby)
 
 Threshold Secret Sharing (TSS) provides a way to generate N shares
@@ -27,6 +38,11 @@ transmission of shares.
 
 This implementation follows the
 [draft-mcgrew-tss-03](http://tools.ietf.org/html/draft-mcgrew-tss-03) specification.
+
+#### [grempe/session-keys-rb](https://github.com/grempe/session-keys-rb){:target="_blank"} (Ruby)
+
+SessionKeys is a cryptographic tool for the deterministic generation of NaCl
+compatible Curve25519 encryption and Ed25519 digital signature keys.
 
 #### [grempe/ex_rated](https://github.com/grempe/ex_rated){:target="_blank"} (Elixir)
 
