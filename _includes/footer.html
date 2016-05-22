@@ -18,8 +18,8 @@
             </a>
           </li>
           <li>
-            <a href="/btc/">
-              <span class="fa fa-btc"></span>&nbsp;<span class="username">Send Bitcoin</span>
+            <a href="/money/">
+              <span class="fa fa-usd"></span>&nbsp;<span class="username">Send Money</span>
             </a>
           </li>
         </ul>
@@ -50,20 +50,6 @@
             </a>
           </li>
           {% endif %}
-
-          {% if site.coinbase_username %}
-          <li>
-            <a href="https://www.coinbase.com/{{ site.coinbase_username }}" target="_blank">
-              <span class="fa fa-btc"></span>&nbsp;<span class="username">{{ site.coinbase_username }}</span>
-            </a>
-          </li>
-          {% endif %}
-
-          <li>
-            <a href="http://grempe.tip.me" target="_blank">
-              <span class="fa fa-usd"></span>&nbsp;<span class="username">grempe</span>
-            </a>
-          </li>
 
           {% if site.keybase_username %}
           <li>

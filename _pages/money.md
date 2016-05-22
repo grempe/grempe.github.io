@@ -1,8 +1,23 @@
 ---
 layout: page
-title: Bitcoin (BTC)
-permalink: /btc/
+title: Send Money
+permalink: /money/
 ---
+
+## PayPal
+
+[https://www.paypal.me/grempe](https://www.paypal.me/grempe)
+
+## Venmo
+
+[https://venmo.com/grempe](https://venmo.com/grempe)
+
+## ChangeTip
+
+[https://www.changetip.com/tipme/grempe](https://www.changetip.com/tipme/grempe)
+
+## Bitcoin (BTC)
+
 I verify that the following are public Bitcoin addresses that I control and
 which can be used to send funds to me.
 
@@ -13,7 +28,7 @@ I control the private key for that coin. You can use your own Bitcoin client,
 or the online tool at [chainquery.com](https://chainquery.com/bitcoin-api/verifymessage){:target="_blank"}
 to verify each signature.
 
-## Public Addresses
+### Public BTC
 
 **16sc7ieccdHLVcqZfYyEvqfCuPxaKwJau4**
 @ Private Wallet
@@ -43,7 +58,7 @@ Signature: H+e3XlLikjMyB8Ba41YkAOzhufI9Ho5WQ1RCc5iBqWU34hLuAhAzBmK5spZ2Mo6KoGFkk
 ![btc-1D6NkXdtxom9Mkk9pK817c8BA1T5nAd5tb.png](/images/btc-1D6NkXdtxom9Mkk9pK817c8BA1T5nAd5tb.png)
 
 
-## Coinbase Addresses
+### Coinbase BTC
 
 Additionally, I have a [coinbase.com/grempe](https://www.coinbase.com/grempe){:target="_blank"}
 profile page which can be used to send funds to a dynamically generated Bitcoin address
