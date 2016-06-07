@@ -111,8 +111,7 @@ for both IPv4 and IPv6 connections to [www.]rempe.us.
 
 The entire website is also secured with a strict [Content Security Policy](http://www.html5rocks.com/en/tutorials/security/content-security-policy/) that enforces that
 all page assets (HTML, CSS, images, fonts, JavaScript, etc.) are served by the same origin
-server, and all inline scripts and styles are prohibited. Violations are reported
-in real-time via [report-uri.io](https://report-uri.io/).
+server, and all inline scripts and styles are prohibited.
 
 #### Proof of Ownership
 
