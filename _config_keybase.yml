@@ -1,0 +1,7 @@
+# keybase env settings
+# jekyll build --config _config.yml,_config_keybase.yml -d /keybase/public/grempe/www.rempe.us
+
+# the subpath of your site, e.g. /blog
+baseurl: "/www.rempe.us"
+# the base hostname & protocol for your site with no trailing slash
+url: "https://grempe.keybase.pub"

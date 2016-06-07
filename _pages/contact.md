@@ -20,7 +20,7 @@ pages are a great starting point.
 ### Email (low security)
 
 My primary email address is hosted by Google. Feel free to send me PGP encrypted
-email using [my PGP public keys](/keys/). Expectations of privacy are low.
+email using [my PGP public keys]({{ "/keys/" | prepend: site.baseurl | prepend: site.url}}). Expectations of privacy are low.
 
 * [glenn@rempe.us](mailto:glenn@rempe.us)
 
@@ -43,7 +43,7 @@ and send email to me from that account, our emails will be end-to-end encrypted
 If you send from another email provider, our messages
 may not be encrypted and may be stored on your mail server un-encrypted. In this
 case please send me PGP encrypted email (in-line, not mime attached)
-using [my PGP public email key](/keys/).
+using [my PGP public email key]({{ "/keys/" | prepend: site.baseurl | prepend: site.url}}).
 
 Get a free [ProtonMail](https://protonmail.com) account, its better for everyone.
 

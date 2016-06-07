@@ -10,40 +10,39 @@ I'm Glenn Rempe, and I live with my wife and daughter in San Francisco, CA where
 I work in the technology industry. If you wanted to learn *just a little more* about
 me this is the place to do it.
 
-I enjoy travel (50+ countries, five continents, more to go!), SCUBA diving, photography,
+I enjoy travel (50+ countries, five continents, still more to go!), SCUBA diving, photography,
 and continuously improving my technology and management skills.
 
 Here you'll find links to some of the key sites I frequent, learn how
-to [contact me](/contact/) securely using [strong encryption](/keys/),
-read a few [blog posts](/blog/), see some recent open source [projects](/projects/) I've
-been working on, or view my [Résumé](/resume/).
+to [contact me]({{ "/contact/" | prepend: site.baseurl | prepend: site.url}}) securely using [strong encryption]({{ "/keys/" | prepend: site.baseurl | prepend: site.url}}),
+read a few [blog posts]({{ "/blog/" | prepend: site.baseurl | prepend: site.url}}), see some recent open source [projects]({{ "/projects/" | prepend: site.baseurl | prepend: site.url}}) I've
+been working on, or view my [Résumé]({{ "/resume/" | prepend: site.baseurl | prepend: site.url}}).
 
 ## This Site
 
 ### Goals
 
-It was long past time to retire my previous homepage at
-[rempe.us](https://www.rempe.us/), and update it with something a bit
-more functional. In researching what technology I wanted to use I had a
-few guiding principles. In a word, ***simplicity***.
+In researching the technology stack I wanted to use to manage my web presence I
+had a few guiding principles. In a word, they can be summed up as ***simplicity***.
 
 * Keep the UX simple and **clean**
 * Present a 'mobile first' **responsive** UI
 * Stay lightweight and **fast** (< 500ms load time) even under extreme load
-* **Secure** HTTPS/TLS only
+* **Secure** in transit, HTTPS/TLS only
+* **Secure** at rest, all content must be cryptographically signed and verifiable
 * Provide **machine readable** sitemap and Atom RSS feeds
-* Be secure and **impenetrable** to hacking and resistant to DDoS
-* **Easily deployable** to production
-* Simple content creation
-* All content and code **versioned** in Git, with **signed** commits
-* Require minimal or **no operational overhead** (web & database servers)
+* Be secure and **highly resistant** to hacking or DDoS attacks
+* Be **Easily deployable** to production
+* Allow for friction free content creation and updates
+* All content and code **versioned** in a public Git repository, with **signed** commits
+* Require minimal or **no operational overhead** (no servers to manage, no DB to backup or secure)
 * Highly **cacheable** and global CDN friendly
-* Entail **minimal cost**, free preferred
+* Hosted on a free service
 
 Keeping all of this in mind, *I believe I have achieved all of these goals*. Read on
-to learn more about the technology choices I made along the way.
+to learn more about the technology stack.
 
-### The Technology Platform
+### The Technology
 
 #### Development
 
@@ -64,7 +63,7 @@ first layout that allows the site to work equally well on your iPhone or your de
 
 All content and code is stored in a Git repository, hosted and publicly available
 on Github @ [https://github.com/grempe/grempe.github.io](https://github.com/grempe/grempe.github.io)
-and every commit is cryptographically [signed with my Blog Signing Key](/keys/).
+and every commit is cryptographically [signed with my Blog Signing Key]({{ "/keys/" | prepend: site.baseurl | prepend: site.url}}).
 
 #### Github Pages
 
@@ -74,7 +73,7 @@ Github page at [grempe.github.io](https://grempe.github.io/).
 
 My DNS server is configured with the following records that point to Github servers:
 
-``` text
+```
 CNAME www.rempe.us -> grempe.github.io
 A         rempe.us -> 192.30.252.153
 A         rempe.us -> 192.30.252.154
@@ -84,6 +83,10 @@ With this DNS configuration, Github becomes the canonical host for [www.]rempe.u
 The rempe.us apex domain redirects to www.rempe.us
 
 Github routes my content through the [Fastly.com](https://www.fastly.com/customers/github) CDN.
+
+#### Keybase File System (KBFS)
+
+A second copy of the static files for this site are stored in the [Keybase File System (KBFS)](https://keybase.io/docs/kbfs) and can be viewed at [https://grempe.keybase.pub/www.rempe.us/](https://grempe.keybase.pub/www.rempe.us/). KBFS allows me to store cryptographically signed files which are then served over the web.
 
 #### CloudFlare CDN
 
