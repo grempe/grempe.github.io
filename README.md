@@ -8,6 +8,10 @@ This is a [Github pages](https://help.github.com/articles/using-jekyll-with-page
 bundle install
 bundle update
 bundle exec jekyll serve --config _config.yml,_config_dev.yml --safe --watch --profile --incremental
+
+# note : it is important to open using '0.0.0.0' address and not '127.0.0.1' or
+# the CSS will fail to to load due to Content Security Policy errors.
+open http://0.0.0.0:4000/
 ```
 
 ### Deployment
