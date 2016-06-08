@@ -13,12 +13,12 @@
             <span class="fa fa-envelope-o"></span>&nbsp;<a href="mailto:{{ site.email }}">{{ site.email_secure }}</a>
           </li>
           <li>
-            <a href="/keys/">
+            <a href="{{ site.baseurl }}/keys/">
               <span class="fa fa-key"></span>&nbsp;<span class="username">PGP 0xA4A288A3BECCAE17</span>
             </a>
           </li>
           <li>
-            <a href="/money/">
+            <a href="{{ site.baseurl }}/money/">
               <span class="fa fa-usd"></span>&nbsp;<span class="username">Send Money</span>
             </a>
           </li>
@@ -77,7 +77,6 @@
             </a>
           </li>
 
-
         </ul>
       </div>
 
@@ -85,15 +84,15 @@
         <p class="text">{{ site.description }}</p>
 
         <p>
-          <span class="fa fa-archive"></span>&nbsp;<a href="{{  "/blog/archive/" | prepend: site.baseurl }}">blog posts</a><br />
+          <span class="fa fa-archive"></span>&nbsp;<a href="{{ site.baseurl }}/blog/archive/">blog posts</a><br />
           <span class="fa fa-code-fork"></span>&nbsp;<a href="{{ site.source_url }}" target="_blank">source code</a><br />
           <span class="fa fa-bug"></span>&nbsp;<a href="https://github.com/grempe/grempe.github.io/issues" target="_blank">bugs</a><br />
-          <span class="fa fa-rss"></span>&nbsp;<a href="{{ "/feed.xml" | prepend: site.baseurl }}">atom (rss) feed</a>
+          <span class="fa fa-rss"></span>&nbsp;<a href="{{ site.baseurl }}/feed.xml">atom (rss) feed</a>
         </p>
 
         <p>
           <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-          <img alt="Creative Commons License" src="{{ "/resources/cc-by-nc-sa.png" | prepend: site.baseurl }}" />
+          <img alt="Creative Commons License" src="{{ site.baseurl }}/resources/cc-by-nc-sa.png" />
           </a>
         </p>
 

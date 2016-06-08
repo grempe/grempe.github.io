@@ -25,22 +25,22 @@ title: Blog
   <div class="pagination">
     <ul class="inline-list">
       {% if paginator.previous_page %}
-        <li class="prev"><a href="/blog/{% if paginator.previous_page != 1 %}page{{ paginator.previous_page }}{% endif %}">Newer</a></li>
+        <li class="prev"><a href="{{ site.baseurl }}/blog/{% if paginator.previous_page != 1 %}page{{ paginator.previous_page }}{% endif %}">Newer</a></li>
       {% endif %}
 
-      <li><a {% if paginator.page==1 %}class="active" {% endif %}href="/blog/">1</a></li>
+      <li><a {% if paginator.page==1 %}class="active" {% endif %}href="{{ site.baseurl }}/blog/">1</a></li>
 
       {% for count in (2..paginator.total_pages) %}
-        <li><a {% if paginator.page==count %}class="active" {% endif %}href="/blog/page{{ count }}">{{ count }}</a></li>
+        <li><a {% if paginator.page==count %}class="active" {% endif %}href="{{ site.baseurl }}/blog/page{{ count }}">{{ count }}</a></li>
       {% endfor %}
 
       {% if paginator.next_page %}
-        <li class="next"><a href="/blog/page{{ paginator.next_page }}">Older</a></li>
+        <li class="next"><a href="{{ site.baseurl }}/blog/page{{ paginator.next_page }}">Older</a></li>
       {% endif %}
     </ul>
   </div>
   {% endif %}
 
-  <small>View <a href="{{ '/blog/archive/' | prepend: site.baseurl }}">complete blog archive</a> or subscribe <a href="{{ '/feed.xml' | prepend: site.baseurl }}">via RSS</a></small>
+  <small>View <a href="{{ site.baseurl }}/blog/archive">complete blog archive</a> or subscribe <a href="{{ site.baseurl }}/feed.xml">via RSS</a></small>
 
 </div>
