@@ -5,9 +5,9 @@ permalink: /contact/
 ---
 
 Something I am passionate about is the ability for each of us to communicate freely
-while maintaining a sense of privacy in our communications. The right to privacy
-and security are not something given to us by governments, they are fundamental
-human rights.
+while maintaining the privacy of our communications. The right to privacy
+and security are not something given to us by governments, they are [fundamental
+human rights](http://motherboard.vice.com/read/united-nations-encryption-and-online-anonymity-are-basic-human-rights){:target="_blank"}.
 
 Privacy and security are not at odds with each other, and are essential to the
 freedoms and liberties we enjoy. Strong encryption, used liberally, gives us
@@ -17,12 +17,19 @@ I would encourage you to learn more, and to make use of the tools at hand to
 communicate with me. The [EFF Surveillance Self-Defense](https://ssd.eff.org){:target="_blank"}
 pages are a great starting point.
 
-### Email (low security)
+Here are some good ways to contact me, with varying security properties.
 
-My primary email address is hosted by Google. Feel free to send me PGP encrypted
-email using [my PGP public keys]({{ "/keys/" | prepend: site.baseurl | prepend: site.url}}). Expectations of privacy are low.
+
+### Email (lower security)
+
+My primary email address is hosted by Google. Unless you send encrypted email,
+the expectations of privacy should be kept pretty low.
 
 * [glenn@rempe.us](mailto:glenn@rempe.us)
+
+Please feel free to encrypt sensitive messages to me using PGP.
+
+You can find [my PGP public key for email with ID 0xA4A288A3BECCAE17]({{ "/keys/" | prepend: site.baseurl | prepend: site.url}}) here.
 
 *Supports : Plain Text / Encrypted Text / Attached Photos / Attached Documents*
 
@@ -31,21 +38,14 @@ email using [my PGP public keys]({{ "/keys/" | prepend: site.baseurl | prepend: 
 
 * [grempe@protonmail.com](mailto:grempe@protonmail.com)
 
-Sensitive emails should be sent to my [ProtonMail](https://protonmail.com) account.
-ProtonMail is a secure email service based in Switzerland and uses
-[end-to-end encryption](https://en.wikipedia.org/wiki/End-to-end_encryption)
-when possible.
+Sensitive emails should be sent to my [ProtonMail](https://protonmail.com){:target="_blank"}
+account. It is best if you also use ProtonMail to send the message to me, as that
+way the message will be encrypted end-to-end. Read more about [ProtonMail Security](https://protonmail.com/security-details){:target="_blank"}.
 
-If you also have an account with ProtonMail (which is free and anonymous),
-and send email to me from that account, our emails will be end-to-end encrypted
-(a good thing).
+If you don't also use ProtonMail please feel free to encrypt sensitive messages
+to me at this address using PGP.
 
-If you send from another email provider, our messages
-may not be encrypted and may be stored on your mail server un-encrypted. In this
-case please send me PGP encrypted email (in-line, not mime attached)
-using [my PGP public email key]({{ "/keys/" | prepend: site.baseurl | prepend: site.url}}).
-
-Get a free [ProtonMail](https://protonmail.com) account, its better for everyone.
+You can find [my PGP public key for email with ID 0xA4A288A3BECCAE17]({{ "/keys/" | prepend: site.baseurl | prepend: site.url}}) here.
 
 *Supports : Plain Text / Encrypted Text / Attached Photos / Attached Documents*
 
@@ -54,10 +54,8 @@ Get a free [ProtonMail](https://protonmail.com) account, its better for everyone
 
 Open Whisper Systems [Signal](https://whispersystems.org) is currently thought
 to be very secure by people that I respect in the security industry.  Signal
-is my preferred method of secure contact and supports voice, group text, private
-text, picture, and video messages. If you have my mobile number in your phone's contact list then
-you can reach me with Signal. If you need my phone number to contact me
-via Signal please request it via email.
+is my preferred method of secure contact. If you have my mobile number
+in your phone's contact list then you can reach me with Signal.
 
 My Fingerprint (mobile phone):
 
@@ -74,27 +72,68 @@ It will show both my fingerprint and yours.
 
 *Supports : Text Messaging / Voice Calls / Photos / Videos*
 
+
 ### WhatsApp
 
-WhatsApp, at least as of the
-[rollout of end-to-end encryption on 4/5/2016](https://blog.whatsapp.com/10000618/end-to-end-encryption),
-doesn't make it too easy to verify your fingerprint out-of-band.
+WhatsApp can be used securely, but it requires some config changes
+to do so properly. Take a look at [this article from @thegrugq](https://medium.com/@thegrugq/operational-whatsapp-on-ios-ce9a4231a034#.6k0pzq7xr){:target="_blank"} for more info.
 
-If you're connected with me on WhatsApp, view the verification UI with the QR code
-and the 60 digit long fingerprint. My portion of the fingerprint will be
-either the first six, or the last six blocks (30 digits) of that verifier. Your
-portion of the fingerprint is the other six blocks. One of:
+An additional security step you can take is to publish your WhatsApp fingerprint
+publicly, for example on your facebook or twitter bio. WhatsApp does allow you
+to publish your fingerprint, or verify the published fingerprint for another
+user, but they don't make it particularly easy to do so. You can learn more about
+it on their [End-to-End Encryption FAQ](https://www.whatsapp.com/faq/en/general/28030015){:target="_blank"} page.
+The first step is to determine your own fingerprint.
+
+1. Open the chat.
+2. Tap on the name of the contact to open the contact info screen.
+3. Tap Encryption to view the QR code and 60-digit number.
+
+The fingerprint block you'll see, 12 groups of five numbers, is actually
+the concatenation of your fingerprint, and the other person's fingerprint.
+Each fingerprint is made up of six number blocks, so the first half
+belongs to one of you, and the second half to the other. The tricky part is that
+the two show no visible separation, and [are sorted by their value](https://twitter.com/dchest/status/717492356849803265). This means
+that for any given chat partner, sometimes your fingerprint block comes first
+and sometimes it comes last.
+
+For example, if you're connected with me on WhatsApp and you view the 'Verify
+Security Code' page, my portion of the fingerprint may be the first six blocks,
+or the last six blocks of that verifier. It depends on how you would sort them.
+So for me you will always see one of the following patterns, where
+your fingerprint would be where the zeros are and mine is as shown.
 
 ``` text
-56143 41025 77814 55362 45113 58854 + YOURS
-YOURS + 56143 41025 77814 55362 45113 58854
+56143 41025 77814 55362
+45113 58854 00000 00000
+00000 00000 00000 00000
 ```
+
+``` text
+00000 00000 00000 00000
+00000 00000 56143 41025
+77814 55362 45113 58854
+```
+
+So the easiest way to find out what your fingerprint is, is to look at the
+verification page for two different chat connections you have, and find the
+six number block that is the same between the two. The one that is the same,
+which may come first or last in the sequence, is yours.
+
+The easier way is to meet me in person and we can exchange and verify fingerprints
+by scanning the QR code in the app, or by reading the fingerprint to each other
+on a voice call, but only if we recognize each others voices.
+
+*Supports : Text Messaging / Voice Calls / Photos / Videos*
+
 
 ### Apple FaceTime
 
-I use [Apple FaceTime](https://www.apple.com/ios/facetime/) extensively. You can
-contact me using FaceTime by adding my contact email address [glenn@rempe.us](mailto:glenn@rempe.us)
+You can contact me using [Apple FaceTime](https://www.apple.com/ios/facetime/)
+by adding my contact email address [glenn@rempe.us](mailto:glenn@rempe.us)
 to your contacts on your Mac or iOS device.
+
+Unfortunately, Apple does not provide any way to view or verify key fingerprints.
 
 *Supports : Text Messaging / Voice Calls / Video Calls / Photos / Videos*
 
