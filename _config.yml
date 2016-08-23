@@ -1,4 +1,5 @@
 # Site settings
+theme: minima
 timezone: "America/Los_Angeles"
 title: rempe.us
 name: "Glenn Rempe"
