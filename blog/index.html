@@ -31,7 +31,7 @@ title: Blog
       <li><a {% if paginator.page==1 %}class="active" {% endif %}href="{{ '/blog/' | relative_url }}">1</a></li>
 
       {% for count in (2..paginator.total_pages) %}
-        <li><a {% if paginator.page==count %}class="active" {% endif %}href="{{ '/blog/page{{ count }}' | relative_url }}">{{ count }}</a></li>
+        <li><a {% if paginator.page==count %}class="active" {% endif %}href="{{ site.baseurl }}/blog/page{{ count }}">{{ count }}</a></li>
       {% endfor %}
 
       {% if paginator.next_page %}
