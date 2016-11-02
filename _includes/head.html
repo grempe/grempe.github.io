@@ -9,15 +9,15 @@
 
   <title>{{ site.name }} - {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{{ site.description }}">
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="alternate" type="application/atom+xml" title="{{ site.title }} — Feed" href="{{ site.url }}{{ site.baseurl }}/feed.xml" />
-  <link type="text/plain" rel="author" href="{{ site.url }}{{ site.baseurl }}/humans.txt" />
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+  <link rel="alternate" type="application/atom+xml" title="{{ site.title }} — Feed" href="{{ '/feed.xml' | absolute_url }}" />
+  <link type="text/plain" rel="author" href="{{ '/humans.txt' | absolute_url  }}" />
 
   <!-- protect with sub-resource integrity hash -->
   <!-- openssl dgst -sha384 -binary FILENAME.js | openssl base64 -A -->
-  <link rel="stylesheet" href="{{ "/css/font-awesome-4.6.3/css/font-awesome.min.css" | prepend: site.baseurl | prepend: site.url }}" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ "/css/font-awesome-4.6.3/css/font-awesome.min.css" | absolute_url }}" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl | prepend: site.url }}">
+  <link rel="stylesheet" href="{{ "/css/main.css" | absolute_url }}">
 
   <!-- github SEO plugin -->
   {% seo %}

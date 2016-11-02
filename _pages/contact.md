@@ -29,7 +29,7 @@ the expectations of privacy should be kept pretty low.
 
 Please feel free to encrypt sensitive messages to me using PGP.
 
-You can find [my PGP public key for email with ID 0xA4A288A3BECCAE17]({{ "/keys/" | prepend: site.baseurl | prepend: site.url}}) here.
+You can find [my PGP public key for email with ID 0xA4A288A3BECCAE17]({{ "/keys/" | relative_url }}) here.
 
 *Supports : Plain Text / Encrypted Text / Attached Photos / Attached Documents*
 
@@ -45,7 +45,7 @@ way the message will be encrypted end-to-end. Read more about [ProtonMail Securi
 If you don't also use ProtonMail please feel free to encrypt sensitive messages
 to me at this address using PGP.
 
-You can find [my PGP public key for email with ID 0xA4A288A3BECCAE17]({{ "/keys/" | prepend: site.baseurl | prepend: site.url}}) here.
+You can find [my PGP public key for email with ID 0xA4A288A3BECCAE17]({{ "/keys/" | relative_url }}) here.
 
 *Supports : Plain Text / Encrypted Text / Attached Photos / Attached Documents*
 

@@ -12,7 +12,7 @@ title: Blog
       <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
       <h2>
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
       </h2>
 
       {{ post.excerpt }}
@@ -28,10 +28,10 @@ title: Blog
         <li class="prev"><a href="{{ site.baseurl }}/blog/{% if paginator.previous_page != 1 %}page{{ paginator.previous_page }}{% endif %}">Newer</a></li>
       {% endif %}
 
-      <li><a {% if paginator.page==1 %}class="active" {% endif %}href="{{ site.baseurl }}/blog/">1</a></li>
+      <li><a {% if paginator.page==1 %}class="active" {% endif %}href="{{ '/blog/' | relative_url }}">1</a></li>
 
       {% for count in (2..paginator.total_pages) %}
-        <li><a {% if paginator.page==count %}class="active" {% endif %}href="{{ site.baseurl }}/blog/page{{ count }}">{{ count }}</a></li>
+        <li><a {% if paginator.page==count %}class="active" {% endif %}href="{{ '/blog/page{{ count }}' | relative_url }}">{{ count }}</a></li>
       {% endfor %}
 
       {% if paginator.next_page %}
@@ -41,6 +41,6 @@ title: Blog
   </div>
   {% endif %}
 
-  <small>View <a href="{{ site.baseurl }}/blog/archive">complete blog archive</a> or subscribe <a href="{{ site.baseurl }}/feed.xml">via RSS</a></small>
+  <small>View <a href="{{ '/blog/archive' | relative_url }}">complete blog archive</a> or subscribe <a href="{{ '/feed.xml' | relative_url }}">via RSS</a></small>
 
 </div>

@@ -14,9 +14,9 @@ I enjoy travel (50+ countries, five continents, still more to go!), SCUBA diving
 and continuously improving my technology and management skills.
 
 Here you'll find links to some of the key sites I frequent, learn how
-to [contact me]({{ "/contact/" | prepend: site.baseurl | prepend: site.url}}) securely using [strong encryption]({{ "/keys/" | prepend: site.baseurl | prepend: site.url}}),
-read a few [blog posts]({{ "/blog/" | prepend: site.baseurl | prepend: site.url}}), see some recent open source [projects]({{ "/projects/" | prepend: site.baseurl | prepend: site.url}}) I've
-been working on, or view my [Résumé]({{ "/resume/" | prepend: site.baseurl | prepend: site.url}}).
+to [contact me]({{ "/contact/" | relative_url }}) securely using [strong encryption]({{ "/keys/" | relative_url }}),
+read a few [blog posts]({{ "/blog/" | relative_url }}), see some recent open source [projects]({{ "/projects/" | relative_url }}) I've
+been working on, or view my [Résumé]({{ "/resume/" | relative_url }}).
 
 ## This Site
 
@@ -63,7 +63,7 @@ first layout that allows the site to work equally well on your iPhone or your de
 
 All content and code is stored in a Git repository, hosted and publicly available
 on Github @ [https://github.com/grempe/grempe.github.io](https://github.com/grempe/grempe.github.io)
-and every commit is cryptographically [signed with my Blog Signing Key]({{ "/keys/" | prepend: site.baseurl | prepend: site.url}}).
+and every commit is cryptographically [signed with my Blog Signing Key]({{ "/keys/" | relative_url }}).
 
 #### Github Pages
 

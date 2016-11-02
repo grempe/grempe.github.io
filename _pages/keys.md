@@ -124,7 +124,7 @@ uid  Glenn Rempe (Master Signing Key) <glenn@rempe.us>
 sig!3        0x63608B66C0929A67 2015-12-27  [self-signature]
 ```
 
-#### Install Key [0x63608B66C0929A67.asc]({{ "/downloads/keys/0x63608B66C0929A67.asc" | prepend: site.baseurl | prepend: site.url}})
+#### Install Key [0x63608B66C0929A67.asc]({{ "/downloads/keys/0x63608B66C0929A67.asc" | relative_url }})
 
 from keyserver (w/ any third party signatures):
 
@@ -162,7 +162,7 @@ sig!3        0x37B8284B4B3EBE74 2015-12-27  [self-signature]
 sig!         0x63608B66C0929A67 2015-12-27  Glenn Rempe (Master Signing Key)
 ```
 
-#### Install Key [0x37B8284B4B3EBE74.asc]({{ "/downloads/keys/0x37B8284B4B3EBE74.asc" | prepend: site.baseurl | prepend: site.url}})
+#### Install Key [0x37B8284B4B3EBE74.asc]({{ "/downloads/keys/0x37B8284B4B3EBE74.asc" | relative_url }})
 
 from keyserver (w/ any third party signatures):
 
@@ -198,7 +198,7 @@ sig!3        0x2C4C3C144301224F 2015-12-27  [self-signature]
 sig!         0x63608B66C0929A67 2015-12-27  Glenn Rempe (Master Signing Key)
 ```
 
-#### Install Key [0x2C4C3C144301224F.asc]({{ "/downloads/keys/0x2C4C3C144301224F.asc" | prepend: site.baseurl | prepend: site.url}})
+#### Install Key [0x2C4C3C144301224F.asc]({{ "/downloads/keys/0x2C4C3C144301224F.asc" | relative_url }})
 
 from keyserver (w/ any third party signatures):
 
@@ -247,7 +247,7 @@ sig!3        0xA4A288A3BECCAE17 2014-10-02  [self-signature]
 sig!         0x63608B66C0929A67 2015-12-27  Glenn Rempe (Master Signing Key)
 ```
 
-#### Install Key [0xA4A288A3BECCAE17.asc]({{ "/downloads/keys/0xA4A288A3BECCAE17.asc" | prepend: site.baseurl | prepend: site.url}})
+#### Install Key [0xA4A288A3BECCAE17.asc]({{ "/downloads/keys/0xA4A288A3BECCAE17.asc" | relative_url }})
 
 from keyserver (w/ any third party signatures):
 
