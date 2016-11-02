@@ -4,9 +4,14 @@ title: Projects
 permalink: /projects/
 ---
 
-Here are a few of the Open Source projects I either created,
-maintain, or contribute to. There are *many* more, but these are
-active.
+Here is a sampling of the Open Source projects I have created,
+maintain, or contribute to. I have contributed thousands of commits,
+pull requests, and issue reports to open source projects in the last
+decade and I believe very strongly in the benefits of Open Source Software. You
+can see a summary of my contributions on my [Github profile page](https://github.com/grempe){:target="_blank"}.
+
+In the section that follows I have summarized some of the more recent interesting
+projects I have been working on.
 
 #### [grempe/grempe.github.io](https://github.com/grempe/grempe.github.io){:target="_blank"} (HTML/Markdown/CSS)
 
@@ -39,10 +44,23 @@ transmission of shares.
 This implementation follows the
 [draft-mcgrew-tss-03](http://tools.ietf.org/html/draft-mcgrew-tss-03) specification.
 
+#### [grempe/rack-json_web_token_auth](https://github.com/grempe/rack-json_web_token_auth){:target="_blank"} (Ruby)
+
+`Rack::JsonWebTokenAuth` is a Rack middleware that makes it easy for your Rack based application (Sinatra, Rails) to authenticate clients that present a valid `Authorization: Bearer [token]` header with a cryptographically signed [JSON Web Token (JWT)](https://jwt.io/).
+
 #### [grempe/session-keys-rb](https://github.com/grempe/session-keys-rb){:target="_blank"} (Ruby)
 
 SessionKeys is a cryptographic tool for the deterministic generation of NaCl
 compatible Curve25519 encryption and Ed25519 digital signature keys.
+
+Compatible with [grempe/session-keys-js](https://github.com/grempe/session-keys-js){:target="_blank"}
+
+#### [grempe/session-keys-js](https://github.com/grempe/session-keys-js){:target="_blank"} (JavaScript)
+
+SessionKeys is a cryptographic tool for the deterministic generation of NaCl
+compatible Curve25519 encryption and Ed25519 digital signature keys.
+
+Compatible with [grempe/session-keys-rb](https://github.com/grempe/session-keys-rb){:target="_blank"}
 
 #### [grempe/ex_rated](https://github.com/grempe/ex_rated){:target="_blank"} (Elixir)
 
@@ -77,38 +95,3 @@ A live version of this tool can be found at
 #### [grempe/secrets.js](https://github.com/grempe/secrets.js){:target="_blank"} (JavaScript)
 
 Another implementation of Shamir's Secret Sharing in JavaScript.
-
-#### [jo/session25519](https://github.com/jo/session25519){:target="_blank"} (JavaScript)
-
-session25519 is a public key cryptography library for the generation of
-Curve25519 encryption and ed25519 digital signature keys.
-
-#### [SpiderOak/crypton](https://github.com/SpiderOak/crypton){:target="_blank"} (JavaScript)
-
-A framework for creating zero-knowledge mobile & desktop applications. You can
-learn more about [crypton.io](https://crypton.io/). I have been an active contributor
-to this project and support its goals of making the use of end-to-end encrypted
-zero-knowledge back ends easier for developers to utilize.
-
-### Archived Projects
-
-#### [grempe/secretsharing](https://github.com/grempe/secretsharing){:target="_blank"} (Ruby)
-
-Shamir's Secret Sharing is an algorithm in cryptography. It is a form of secret
-sharing, where a secret is divided into parts, giving each participant its own
-unique part, where some of the parts or all of them are needed in order to
-reconstruct the secret. Holders of a share gain no knowledge of the larger secret.
-
-This gem was dowloaded >6,000 times and was replaced by an improved
-implementation : [grempe/tss](https://github.com/grempe/tss).
-
-#### [grempe/amazon-ec2](https://github.com/grempe/amazon-ec2){:target="_blank"} (Ruby)
-
-A Ruby Gem that gives you full access to several of the Amazon Web Services
-API from Ruby. This was very popular when Amazon didn't provide their own Ruby
-SDK. Since they now release and maintain their own this is no longer maintained.
-
-### Other Projects
-
-Over on Github You can see a variety of other
-[projects I have toyed with over the years](https://github.com/grempe?tab=repositories){:target="_blank"}.
