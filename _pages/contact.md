@@ -5,9 +5,8 @@ permalink: /contact/
 ---
 
 Something I am passionate about is the ability for each of us to communicate freely
-while maintaining the privacy of our communications. The right to privacy
-and security are not something given to us by governments, they are [fundamental
-human rights](http://motherboard.vice.com/read/united-nations-encryption-and-online-anonymity-are-basic-human-rights){:target="_blank"}.
+while maintaining the confidentiality of our communications. The right to privacy
+is a [fundamental human right](http://motherboard.vice.com/read/united-nations-encryption-and-online-anonymity-are-basic-human-rights){:target="_blank"}.
 
 Privacy and security are not at odds with each other, and are essential to the
 freedoms and liberties we enjoy. Strong encryption, used liberally, gives us
@@ -15,15 +14,16 @@ many of the tools we need to ensure we maintain these freedoms.
 
 I would encourage you to learn more, and to make use of the tools at hand to
 communicate with me. The [EFF Surveillance Self-Defense](https://ssd.eff.org){:target="_blank"}
-pages are a great starting point.
+site is a great starting point.
 
 Here are some good ways to contact me, with varying security properties.
 
+## Email
 
-### Email (lower security)
+### Standard Security
 
 My primary email address is hosted by Google. Unless you send encrypted email,
-the expectations of privacy should be kept pretty low.
+the expectation of privacy is pretty low.
 
 * [glenn@rempe.us](mailto:glenn@rempe.us)
 
@@ -34,7 +34,7 @@ You can find [my PGP public key for email with ID 0xA4A288A3BECCAE17]({{ "/keys/
 *Supports : Plain Text / Encrypted Text / Attached Photos / Attached Documents*
 
 
-### Email (higher security)
+### High Security
 
 * [grempe@protonmail.com](mailto:grempe@protonmail.com)
 
@@ -49,34 +49,52 @@ You can find [my PGP public key for email with ID 0xA4A288A3BECCAE17]({{ "/keys/
 
 *Supports : Plain Text / Encrypted Text / Attached Photos / Attached Documents*
 
+## Instant Messaging
 
-### Signal
+### Signal (Strongly Preferred)
 
 Open Whisper Systems [Signal](https://whispersystems.org) is currently thought
-to be very secure by people that I respect in the security industry.  Signal
+to be very secure by people that I respect in the security industry. Signal [has
+demonstrated that they have extremely little metadata](https://whispersystems.org/bigbrother/eastern-virginia-grand-jury/) that
+they can make available to governments even with a subpoena. Signal
 is my preferred method of secure contact. If you have my mobile number
 in your phone's contact list then you can reach me with Signal.
 
-My Fingerprint (mobile phone):
-
-``` text
-05 22 c2 83 26 44 ac 16 7d
-ff 3f a8 42 95 21 74 01 85
-a9 e4 f5 04 40 04 8a 9f 5a
-94 65 c9 22 9f 76
-```
-
-[How do I verify your fingerprint?](https://github.com/WhisperSystems/Signal-iOS/wiki/FAQ){:target="_blank"}
+[How do I verify your safety numbers?](https://whispersystems.org/blog/disappearing-messages/){:target="_blank"}
 Within a Signal conversation, do a long press on my name at the top of the window.
-It will show both my fingerprint and yours.
+It will show the 'safety numbers' which are a unique combination fingerprint for
+you and I alone. If we verify that we have the same safety numbers we gain
+some assurance that our conversation is not being attacked by a
+man-in-the-middle attacker.
 
-*Supports : Text Messaging / Voice Calls / Photos / Videos*
+*Supports : Text Messaging / Voice Calls / Attached Photos / Attached Videos*
+
+
+### Apple Messages
+
+You can contact me using [Apple Messages](https://support.apple.com/explore/messages)
+by adding my contact email address [glenn@rempe.us](mailto:glenn@rempe.us)
+to your macOS/iOS device.
+
+Unfortunately, Apple does not provide any way to view or verify key fingerprints
+and your conversations are backed up to iCloud if you have automatic backups to
+iCloud turned on. These backups are available to governments with a valid warrant.
+
+*Supports : Text Messaging / Voice Calls / Video Calls / Attached Photos / Attached Videos*
 
 
 ### WhatsApp
 
-WhatsApp can be used securely, but it requires some config changes
+WhatsApp can be used semi-securely, but it requires some config changes
 to do so properly. Take a look at [this article from @thegrugq](https://medium.com/@thegrugq/operational-whatsapp-on-ios-ce9a4231a034#.6k0pzq7xr){:target="_blank"} for more info.
+
+There are some serious security concerns with WhatsApp though due to their
+insistance on pressuring users to backup all messages to their servers where
+they will be available to WhatsApp and Facebook (or three letter agencies) on
+request. It is not enough for you to refuse these backups, everyone else you
+communicate with has to also. There are also concerns about WhatsApp now
+sharing data with parent company Facebook which they initially promised would
+not be done.
 
 An additional security step you can take is to publish your WhatsApp fingerprint
 publicly, for example on your facebook or twitter bio. WhatsApp does allow you
@@ -124,18 +142,7 @@ The easier way is to meet me in person and we can exchange and verify fingerprin
 by scanning the QR code in the app, or by reading the fingerprint to each other
 on a voice call, but only if we recognize each others voices.
 
-*Supports : Text Messaging / Voice Calls / Photos / Videos*
-
-
-### Apple FaceTime
-
-You can contact me using [Apple FaceTime](https://www.apple.com/ios/facetime/)
-by adding my contact email address [glenn@rempe.us](mailto:glenn@rempe.us)
-to your contacts on your Mac or iOS device.
-
-Unfortunately, Apple does not provide any way to view or verify key fingerprints.
-
-*Supports : Text Messaging / Voice Calls / Video Calls / Photos / Videos*
+*Supports : Text Messaging / Voice Calls / Attached Photos / Attached Videos*
 
 
 ### XMPP + OTR Chat
@@ -155,3 +162,12 @@ OTR Fingerprint:     3A93A6EF 7A8A8850 52525538 09BDBBB9 76E93502
 ```
 
 *Supports : Text Messaging*
+
+## Live Video Calls
+
+Please use, in order of preference:
+
+* Apple Facetime (end-to-end encrypted)
+* Google Duo (end-to-end encrypted)
+* Google Hangouts (end-to-end encrypted for [voice and video only](https://support.google.com/hangouts/answer/6046115?hl=en))
+* Skype (nominally encrypted, but [considered unsafe](https://en.wikipedia.org/wiki/Skype_security))
