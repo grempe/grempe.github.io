@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Yubikey, GnuPG 2.1 Modern, and SSH on OS X"
+title: "Yubikey, GnuPG 2.1 Modern, and SSH on macOS"
 date: "2016-01-11 10:33"
 tags: security cryptography gnupg ssh yubikey osx
 categories: security
@@ -16,14 +16,16 @@ release and there are significant changes to how you would go about using your
 GPG keys for SSH.  Since I ran into a few issues, and the existing documentation
 on the web is somewhat lacking, I thought I would write up some notes documenting
 how I did it, and how I solved at least one issue I was having with the interaction
-between the the Yubikey and the `gpg-agent` on OS X.
+between the the Yubikey and the `gpg-agent` on macOS.
 
 ## GnuPG Install
 
-I use [Homebrew](http://brew.sh){:target="_blank"} on OS X and installed the latest version (2.1.10) of GnuPG
+I use [Homebrew](http://brew.sh){:target="_blank"} on macOS and installed the latest version (2.1.16) of GnuPG
 Modern using [homebrew-versions](https://github.com/Homebrew/homebrew-versions/blob/master/README.md){:target="_blank"}:
 
 ``` text
+# NOTE : Installation of 'pinentry-mac' requires a full Xcode installation.
+# The command line tools are not sufficient.
 brew tap homebrew/versions
 brew install gnupg21
 brew install pinentry-mac
@@ -99,13 +101,11 @@ reveal your SSH public key so you can add it to the `authorized_keys` file on
 your remote server you want to access with SSH.
 
 ``` text
-error fetching identities for protocol 1: agent refused operation
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCms1sSkTyI6SUCPxMTiF8gr79+aKu7+eHHVl6fN36HACaTxSouTH3m4cfRc+tZUc3xBxMw5dIsHqD0dAahE/1uDlm+T9uxw9H+m5DpX3sZc/ZR9OYAtGmjpNp8Qa+dS1LnbuIDhF5WziFjekbXnp/WAGO+06sXw3Prelhk26RSEDInj2pGubzEFDqcr1YJHHa/9Ym9vQGboVGUnw9AaoG4GUOAJ1ZEG0S3tgqM8x4u90eynVd0T5e/SExX8zyvtivJWz6Pul84uVf7jcJJ7XGx6592alY4KmrhTauJeOB+YVmQdId7D/Iz9U1Kn45bQAtM4hTt6FPbU5MJmHK7YymF cardno:000600000000
+$ ssh-add -L
+ssh-rsa AAAAB3Nza+MY_LONG_SSH_PUB_KEY cardno:000600000000
 ```
 
-In my case, two lines are printed. The first error line is something
-I have not figured out how to remove yet but it does not seem to affect
-any functionality. Grab the last line starting with `ssh-rsa` and paste
+Grab the last line starting with `ssh-rsa` and paste
 that into the `authorized_keys` file on the remote machine you want to SSH to.
 This should be one long line and should contain no line breaks.
 
@@ -150,8 +150,8 @@ Of course this is a PITA. There has to be a better way.
 
 What I wanted, as a workaround to the problem, was to re-start the agent after the
 Yubikey is removed, and then once again whenever it is re-inserted. I think this may
-be possible using `launchd` on OS X, but I settled on using ControlPlane which is
-an OS X application that can apply system config, or run arbitrary shell scripts,
+be possible using `launchd` on macOS, but I settled on using ControlPlane which is
+an macOS application that can apply system config, or run arbitrary shell scripts,
 in reaction to designated system events. In our case it can be configured to run
 a shell script that will re-start `gpg-agent` every time a Yubikey is inserted
 or removed.
