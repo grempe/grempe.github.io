@@ -23,10 +23,8 @@ open http://localhost:4000
 git push
 ```
 
-#### Keybase
+#### Keybase Mirror
 
 ```
 bundle exec jekyll build --config _config.yml,_config_keybase.yml -d /keybase/public/grempe/www.rempe.us
-
-bundle exec jekyll build --config _config.yml,_config_keybase.yml -d /keybase/public/grempe/www.rempe.us --watch
 ```
