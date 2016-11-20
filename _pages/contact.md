@@ -54,18 +54,21 @@ You can find [my PGP public key for email with ID 0xA4A288A3BECCAE17]({{ "/keys/
 ### Signal (Strongly Preferred)
 
 Open Whisper Systems [Signal](https://whispersystems.org) is currently thought
-to be very secure by people that I respect in the security industry. Signal [has
-demonstrated that they have extremely little metadata](https://whispersystems.org/bigbrother/eastern-virginia-grand-jury/) that
-they can make available to governments even with a subpoena. Signal
+to be very secure by people that I respect in the security and cryptography field.
+Researchers have prepared [A Formal Security Analysis of the Signal Messaging Protocol (PDF)](https://eprint.iacr.org/2016/1013.pdf) and found it to be without any major
+flaws.
+
+Signal [has also demonstrated that they have extremely little metadata](https://whispersystems.org/bigbrother/eastern-virginia-grand-jury/){:target="_blank"} that
+they can make available, even to governments even with lawful orders. Signal
 is my preferred method of secure contact. If you have my mobile number
 in your phone's contact list then you can reach me with Signal.
 
-[How do I verify your safety numbers?](https://whispersystems.org/blog/disappearing-messages/){:target="_blank"}
-Within a Signal conversation, do a long press on my name at the top of the window.
-It will show the 'safety numbers' which are a unique combination fingerprint for
-you and I alone. If we verify that we have the same safety numbers we gain
-some assurance that our conversation is not being attacked by a
-man-in-the-middle attacker.
+[How do I verify your safety numbers?](https://whispersystems.org/blog/safety-number-updates/){:target="_blank"}
+Within a Signal conversation, do a long press (not a force press on iOS) on my
+name at the top of the window. It will show the 'safety numbers' which are
+a unique 60 digit long fingerprint, unique to you and I alone. If we verify that we
+have the same safety numbers when on a call or in person we gain some assurance
+that our conversation cannot be intercepted by a man-in-the-middle attacker.
 
 *Supports : Text Messaging / Voice Calls / Attached Photos / Attached Videos*
 
