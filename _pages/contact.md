@@ -64,11 +64,20 @@ is my preferred method of secure contact. If you have my mobile number
 in your phone's contact list then you can reach me with Signal.
 
 [How do I verify your safety numbers?](https://whispersystems.org/blog/safety-number-updates/){:target="_blank"}
-Within a Signal conversation, do a long press (not a force press on iOS) on my
-name at the top of the window. It will show the 'safety numbers' which are
-a unique 60 digit long fingerprint, unique to you and I alone. If we verify that we
-have the same safety numbers when on a call or in person we gain some assurance
+Within a Signal conversation, touch my name at the top of the window and select
+'Verify Safety Numbers' from the menu. Safety Numbers (also known as a fingerprint)
+are unique 60 digit long numbers, unique to you and I alone. If we verify that we
+have the same safety numbers when on a call, or in person, we gain some assurance
 that our conversation cannot be intercepted by a man-in-the-middle attacker.
+
+Only 30 digits of the safety number belong to you alone. The tricky part is
+that the two halves are sorted and sometimes your portion will be first and sometimes
+it will be last. If you change phones, or uninstall and re-install Signal our
+safety numbers will change. Do not share the QR code for your safety numbers
+publicly. The QR code contains safety numbers that are only valid for a single
+contact pair.
+
+My current Signal fingerprint is `58147 38090 62031 74518 07815 07777`
 
 *Supports : Text Messaging / Voice Calls / Attached Photos / Attached Videos*
 
