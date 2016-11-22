@@ -5,7 +5,7 @@
 
   <meta http-equiv="X-XSS-Protection" content="1; mode=block">
   <meta http-equiv="X-Download-Options" content="noopen">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://*.rempe.us/ 'sha256-JL/qWiuXLBXCZNhQgVI6z+Z1SXXpocY5hgUqG09g9z4='; object-src 'self'; style-src 'self'; img-src 'self'; media-src 'self'; frame-src 'self'; font-src 'self'; connect-src 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://*.rempe.us/ 'sha256-JL/qWiuXLBXCZNhQgVI6z+Z1SXXpocY5hgUqG09g9z4='; object-src 'self'; style-src 'self'; img-src 'self' https://*.rempe.us/; media-src 'self'; frame-src 'self'; font-src 'self'; connect-src 'self';">
 
   <title>{{ site.name }} - {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{{ site.description }}">
