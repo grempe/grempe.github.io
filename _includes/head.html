@@ -5,7 +5,7 @@
 
   <meta http-equiv="X-XSS-Protection" content="1; mode=block">
   <meta http-equiv="X-Download-Options" content="noopen">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://*.rempe.us/ 'sha256-9w6z2kf+qUT6euFSRQDU3FfTZ6R2lMskHRtqLLHMAgs='; object-src 'self'; style-src 'self'; img-src 'self' https://*.rempe.us/; media-src 'self'; frame-src 'self'; font-src 'self'; connect-src 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://*.rempe.us/; object-src 'self'; style-src 'self'; img-src 'self' https://*.rempe.us/; media-src 'self'; frame-src 'self'; font-src 'self'; connect-src 'self';">
 
   <title>{{ site.name }} - {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{{ site.description }}">
@@ -22,20 +22,7 @@
   <!-- github SEO plugin -->
   {% seo %}
 
-  <!-- Piwik : DO NOT CHANGE : Hashed in CSP policy -->
-  <script type="text/javascript">
-    var _paq = _paq || [];
-    _paq.push(["setDomains", ["*.rempe.us"]]);
-    _paq.push(['trackPageView']);
-    _paq.push(['enableLinkTracking']);
-    (function() {
-      var u="//piwik.rempe.us/";
-      _paq.push(['setTrackerUrl', u+'piwik.php']);
-      _paq.push(['setSiteId', '1']);
-      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-    })();
-  </script>
-  <noscript><p><img src="//piwik.rempe.us/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
-  <!-- End Piwik Code -->
+  <!-- Piwik -->
+  <script src="https://piwik.rempe.us/piwik.js" async defer></script>
+  <script src="/js/tracking.js"></script>
 </head>
