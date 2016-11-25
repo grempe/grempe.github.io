@@ -162,12 +162,6 @@ on a voice call, but only if we recognize each others voices.
 Learn more about [using XMPP+OTR+TOR in a great article](https://theintercept.com/2015/07/14/communicating-secret-watched/){:target="_blank"} by Micah Lee. Please contact me in advance if you wish to chat via XMPP + OTR.
 
 ``` text
-XMPP/Jabber Address: grempe@xmpp-hosting.de
-XMPP Provider:       https://jabber.hot-chilli.net/
-OTR Fingerprint:     C30A3B09 C7C0240A 5A0033CA B99267F1 642354B0
-```
-
-``` text
 XMPP/Jabber Address: glenn@rempe.us
 XMPP Provider:       Google Talk (Not federated XMPP)
 OTR Fingerprint:     3A93A6EF 7A8A8850 52525538 09BDBBB9 76E93502
