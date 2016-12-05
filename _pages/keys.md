@@ -59,7 +59,7 @@ You can install all of my current signing and email keys by running the followin
 You should then verify the fingerprint for each key with the key data I have enclosed below.
 
 ``` text
-gpg2 --keyserver pgp.mit.edu --recv-keys 0x63608B66C0929A67 0x37B8284B4B3EBE74 0x2C4C3C144301224F 0xA4A288A3BECCAE17
+gpg2 --keyserver pgp.mit.edu --recv-keys 0x63608B66C0929A67 0x37B8284B4B3EBE74 0x2C4C3C144301224F 0x7FFCB72A6522542E
 ```
 
 You will then also need to run `gpg2 --edit-key KEYID` for each key and choose the `trust`
@@ -219,62 +219,53 @@ wget https://www.rempe.us/downloads/keys/0x2C4C3C144301224F.asc
 gpg2 --import 0x2C4C3C144301224F.asc
 ```
 
-### Email Key
+### Email Key 0x7FFCB72A6522542E
 
 The following key is used for encryption and digital signatures of email or files.
 It is also the key I use for signing other people's keys in the Web of Trust (WOT):
 
 ``` text
-pub   rsa4096/0xA4A288A3BECCAE17 2014-10-02 [expires: 2019-10-01]
-      Key fingerprint = 497A 6138 963D 6C47 202B  238B A4A2 88A3 BECC AE17
-uid                   [  full  ] Glenn Rempe <glenn@rempe.us>
-uid                   [  full  ] [jpeg image of size 1740]
-sub   rsa2048/0x85C81023D9E3FC2F 2015-06-04 [expires: 2019-09-11]
-sub   rsa2048/0x2992317D667E3936 2015-06-04 [expires: 2019-09-11]
-sub   rsa2048/0x19EA4BEADCC31080 2015-06-04 [expires: 2019-09-11]
-
-gpg> check
-uid  Glenn Rempe <glenn@rempe.us>
-sig!3        0xA4A288A3BECCAE17 2014-10-02  [self-signature]
-sig!3        0xA4A288A3BECCAE17 2014-11-06  [self-signature]
-sig!         0x63608B66C0929A67 2015-12-27  Glenn Rempe (Master Signing Key)
-uid  Glenn Rempe <grempe@keybase.io>
-rev!         0xA4A288A3BECCAE17 2015-12-27  [revocation]
-sig!3        0xA4A288A3BECCAE17 2014-11-06  [self-signature]
-sig!         0x63608B66C0929A67 2015-12-27  Glenn Rempe (Master Signing Key)
-uid  [jpeg image of size 1740]
-sig!3        0xA4A288A3BECCAE17 2014-10-02  [self-signature]
-sig!         0x63608B66C0929A67 2015-12-27  Glenn Rempe (Master Signing Key)
+pub   rsa4096/0x7FFCB72A6522542E 2016-11-30 [C] [expires: 2021-11-29]
+      Key fingerprint = 8AE2 2920 FF71 1A64 8FDC  6786 7FFC B72A 6522 542E
+uid                   [ultimate] Glenn Rempe <glenn@rempe.us>
+sub   rsa4096/0x0A25436DD4439C6C 2016-12-01 [S] [expires: 2021-11-30]
+sub   rsa4096/0xB5FB54504E609461 2016-12-01 [E] [expires: 2021-11-30]
+sub   rsa4096/0xB31F795B60C3AE12 2016-12-01 [A] [expires: 2021-11-30]
 ```
 
-#### Install Key [0xA4A288A3BECCAE17.asc]({{ "/downloads/keys/0xA4A288A3BECCAE17.asc" | relative_url }})
+#### Install Key [0x7FFCB72A6522542E.asc]({{ "/downloads/keys/0x7FFCB72A6522542E.asc" | relative_url }})
 
 from keyserver (w/ any third party signatures):
 
 ``` text
-gpg2 --keyserver pgp.mit.edu --recv-key 0xA4A288A3BECCAE17
+gpg2 --keyserver pgp.mit.edu --recv-key 0x7FFCB72A6522542E
 ```
 
 from this server:
 
 ``` text
-gpg2 --fetch-keys http://www.rempe.us/downloads/keys/0xA4A288A3BECCAE17.asc
+gpg2 --fetch-keys http://www.rempe.us/downloads/keys/0x7FFCB72A6522542E.asc
 ```
 
 manually:
 
 ``` text
-wget https://www.rempe.us/downloads/keys/0xA4A288A3BECCAE17.asc
-gpg2 --import 0xA4A288A3BECCAE17.asc
+wget https://www.rempe.us/downloads/keys/0x7FFCB72A6522542E.asc
+gpg2 --import 0x7FFCB72A6522542E.asc
 ```
 
 Find some additional info on this email key and its position in the Web of Trust:
 
-* [http://biglumber.com/x/web?sn=Glenn+Rempe](http://biglumber.com/x/web?sn=Glenn+Rempe){:target="_blank"}
-* [http://biglumber.com/x/web?qs=0xA4A288A3BECCAE17](http://biglumber.com/x/web?qs=0xA4A288A3BECCAE17){:target="_blank"}
-* [http://keyserver.cns.vt.edu/pks/lookup?search=0xA4A288A3BECCAE17&op=vindex](http://keyserver.cns.vt.edu/pks/lookup?search=0xA4A288A3BECCAE17&op=vindex){:target="_blank"}
-* [http://pgp.cs.uu.nl/mk_path.cgi?STAT=0xBECCAE17&STATS=statistics](http://pgp.cs.uu.nl/mk_path.cgi?STAT=0xBECCAE17&STATS=statistics){:target="_blank"}
+* [http://keyserver.cns.vt.edu/pks/lookup?search=0x7FFCB72A6522542E&op=vindex](http://keyserver.cns.vt.edu/pks/lookup?search=0x7FFCB72A6522542E&op=vindex){:target="_blank"}
+* [http://pgp.cs.uu.nl/mk_path.cgi?STAT=0x7FFCB72A6522542E&STATS=statistics](http://pgp.cs.uu.nl/mk_path.cgi?STAT=0x7FFCB72A6522542E&STATS=statistics){:target="_blank"}
 
+
+### Email Key 0xA4A288A3BECCAE17 (Deprecated)
+
+**Key Deprecation Notice:**
+
+The key with ID `0xA4A288A3BECCAE17` is deprecated and has being replaced
+with a new key. You can read more in the [Key Transition Statement](https://github.com/grempe/grempe.github.io/blob/master/downloads/keys/20161204-key-transition-statement.md)
 
 ### Verifying code signatures
 
