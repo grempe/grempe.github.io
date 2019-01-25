@@ -22,7 +22,7 @@ properties at [https://keybase.io/grempe](https://keybase.io/grempe){:target="_b
 
 ## OpenPGP / GnuPG
 
-I use [GnuPG](https://gnupg.org/){:target="_blank"} 'Modern' v2.1.x for email
+I use [GnuPG](https://gnupg.org/){:target="_blank"} 'Modern' v2.2.x for email
 encryption and digital signatures. I use it to sign things like documents, code,
 and the source code for this blog.
 
@@ -59,16 +59,16 @@ You can install all of my current signing and email keys by running the followin
 You should then verify the fingerprint for each key with the key data I have enclosed below.
 
 ``` text
-gpg2 --keyserver pgp.mit.edu --recv-keys 0x63608B66C0929A67 0x37B8284B4B3EBE74 0x2C4C3C144301224F 0x7FFCB72A6522542E
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 0x63608B66C0929A67 0x37B8284B4B3EBE74 0x2C4C3C144301224F 0x7FFCB72A6522542E
 ```
 
-You will then also need to run `gpg2 --edit-key KEYID` for each key and choose the `trust`
+You will then also need to run `gpg --edit-key KEYID` for each key and choose the `trust`
 option which will allow you to specify the `ownertrust` level you want to assign to each of
 my keys. Hopefully you will feel comfortable choosing `I trust fully`. Here is an example
 session for a single key.
 
 ``` text
-$ gpg2 --edit-key C0929A67
+$ gpg --edit-key C0929A67
 gpg (GnuPG) 2.1.9; Copyright (C) 2015 Free Software Foundation, Inc.
 This is free software: you are free to change and redistribute it.
 There is NO WARRANTY, to the extent permitted by law.
@@ -129,20 +129,20 @@ sig!3        0x63608B66C0929A67 2015-12-27  [self-signature]
 from keyserver (w/ any third party signatures):
 
 ``` text
-gpg2 --keyserver pgp.mit.edu --recv-key 0x63608B66C0929A67
+gpg --keyserver hkp://keys.gnupg.net --recv-key 0x63608B66C0929A67
 ```
 
 from this server:
 
 ``` text
-gpg2 --fetch-keys http://www.rempe.us/downloads/keys/0x63608B66C0929A67.asc
+gpg --fetch-keys http://www.rempe.us/downloads/keys/0x63608B66C0929A67.asc
 ```
 
 manually:
 
 ``` text
 wget https://www.rempe.us/downloads/keys/0x63608B66C0929A67.asc
-gpg2 --import 0x63608B66C0929A67.asc
+gpg --import 0x63608B66C0929A67.asc
 ```
 
 ### Blog Signing Key
@@ -167,20 +167,20 @@ sig!         0x63608B66C0929A67 2015-12-27  Glenn Rempe (Master Signing Key)
 from keyserver (w/ any third party signatures):
 
 ``` text
-gpg2 --keyserver pgp.mit.edu --recv-key 0x37B8284B4B3EBE74
+gpg --keyserver hkp://keys.gnupg.net --recv-key 0x37B8284B4B3EBE74
 ```
 
 from this server:
 
 ``` text
-gpg2 --fetch-keys http://www.rempe.us/downloads/keys/0x37B8284B4B3EBE74.asc
+gpg --fetch-keys http://www.rempe.us/downloads/keys/0x37B8284B4B3EBE74.asc
 ```
 
 manually:
 
 ``` text
 wget https://www.rempe.us/downloads/keys/0x37B8284B4B3EBE74.asc
-gpg2 --import 0x37B8284B4B3EBE74.asc
+gpg --import 0x37B8284B4B3EBE74.asc
 ```
 
 ### Code Signing Key
@@ -203,20 +203,20 @@ sig!         0x63608B66C0929A67 2015-12-27  Glenn Rempe (Master Signing Key)
 from keyserver (w/ any third party signatures):
 
 ``` text
-gpg2 --keyserver pgp.mit.edu --recv-key 0x2C4C3C144301224F
+gpg --keyserver hkp://keys.gnupg.net --recv-key 0x2C4C3C144301224F
 ```
 
 from this server:
 
 ``` text
-gpg2 --fetch-keys http://www.rempe.us/downloads/keys/0x2C4C3C144301224F.asc
+gpg --fetch-keys http://www.rempe.us/downloads/keys/0x2C4C3C144301224F.asc
 ```
 
 manually:
 
 ``` text
 wget https://www.rempe.us/downloads/keys/0x2C4C3C144301224F.asc
-gpg2 --import 0x2C4C3C144301224F.asc
+gpg --import 0x2C4C3C144301224F.asc
 ```
 
 ### Email Key 0x7FFCB72A6522542E
@@ -238,20 +238,20 @@ sub   rsa4096/0xB31F795B60C3AE12 2016-12-01 [A] [expires: 2021-11-30]
 from keyserver (w/ any third party signatures):
 
 ``` text
-gpg2 --keyserver pgp.mit.edu --recv-key 0x7FFCB72A6522542E
+gpg --keyserver hkp://keys.gnupg.net --recv-key 0x7FFCB72A6522542E
 ```
 
 from this server:
 
 ``` text
-gpg2 --fetch-keys http://www.rempe.us/downloads/keys/0x7FFCB72A6522542E.asc
+gpg --fetch-keys http://www.rempe.us/downloads/keys/0x7FFCB72A6522542E.asc
 ```
 
 manually:
 
 ``` text
 wget https://www.rempe.us/downloads/keys/0x7FFCB72A6522542E.asc
-gpg2 --import 0x7FFCB72A6522542E.asc
+gpg --import 0x7FFCB72A6522542E.asc
 ```
 
 Find some additional info on this email key and its position in the Web of Trust:
@@ -352,19 +352,6 @@ still valid, to continue to verify cleanly long into the future. The only way
 I am currently aware of accomplishing this is with signing keys that never expire.
 
 ## Alternatives
-
-### miniLock
-
-[miniLock](https://minilock.io/){:target="_blank"} is a Chrome browser extension
-that uses your email and a secret passphrase to generate a miniLock ID. miniLock IDs
-are small and easy to share online — anyone can use your ID to encrypt files to you, and
-you can encrypt files to friends using their miniLock IDs. miniLock is a pretty
-simple way to encrypt any document and can be used by almost anyone. Your miniLock
-public key is small enough to fit in a Tweet. Here is mine.
-
-``` text
-2Gas5UUw2piLwcHYcmmnRqJnCXADvnRBVT8TEAeVrfPZHw
-```
 
 ### Minisign
 

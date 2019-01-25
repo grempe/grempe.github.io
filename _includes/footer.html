@@ -10,7 +10,8 @@
             <span class="fa fa-envelope-o"></span>&nbsp;<a href="mailto:{{ site.email }}">{{ site.email }}</a>
           </li>
           <li>
-            <span class="fa fa-envelope-o"></span>&nbsp;<a href="mailto:{{ site.email_secure }}">{{ site.email_secure }}</a>
+            <span class="fa fa-envelope-o"></span>&nbsp;<a href="mailto:{{ site.email_secure }}">{{ site.email_secure
+              }}</a>
           </li>
           <li>
             <a href="{{ '/keys/' | relative_url }}">
@@ -65,18 +66,6 @@
             </a>
           </li>
 
-          <li>
-            <a href="https://www.instagram.com/g.rempe/" target="_blank">
-              <span class="fa fa-instagram"></span>&nbsp;<span class="username">g.rempe</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="https://www.onename.com/grempe" target="_blank">
-              <span class="fa fa-user"></span>&nbsp;<span class="username">grempe</span>
-            </a>
-          </li>
-
         </ul>
       </div>
 
@@ -92,7 +81,7 @@
 
         <p>
           <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-          <img alt="Creative Commons License" src="{{ '/resources/cc-by-nc-sa.png' | relative_url }}" width="88" />
+            <img alt="Creative Commons License" src="{{ '/resources/cc-by-nc-sa.png' | relative_url }}" width="88" />
           </a>
         </p>
 
@@ -100,12 +89,6 @@
           <span class="fa fa-clock-o"></span>&nbsp;{{ site.time | date_to_rfc822 }}
         </p>
 
-        <p>
-          <noscript>
-            <!-- Piwik -->
-            <img src="https://piwik.rempe.us/piwik.php?idsite=1&rec=1" style="border:0" alt="" />
-          </noscript>
-        </p>
       </div>
     </div>
 

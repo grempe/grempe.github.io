@@ -13,15 +13,19 @@ private keys for about a year now. The Yubikey is a powerful security token and
 I wanted to make use of it to manage my SSH keys as well. I also recently transitioned
 to the newer [GnuPG 'Modern' 2.1.x](https://gnupg.org/faq/whats-new-in-2.1.html){:target="_blank"}
 release and there are significant changes to how you would go about using your
-GPG keys for SSH.  Since I ran into a few issues, and the existing documentation
+GPG keys for SSH. Since I ran into a few issues, and the existing documentation
 on the web is somewhat lacking, I thought I would write up some notes documenting
-how I did it, and how I solved at least one issue I was having with the interaction
-between the the Yubikey and the `gpg-agent` on macOS.
+how I did it.
+
+**UPDATE** : November 19, 2016 : When this post was first written there were
+issues with using GnuPG 2.1.x with versions of macOS prior to 10.12 (Sierra).
+As a result of upgrades in both macOS and GnuPG these issues seem to have largely
+dissapeared for me. I have updated this post to reflect current reality.
 
 ## GnuPG Install
 
-I use [Homebrew](http://brew.sh){:target="_blank"} on macOS and installed the latest version (2.1.16) of GnuPG
-Modern using [homebrew-versions](https://github.com/Homebrew/homebrew-versions/blob/master/README.md){:target="_blank"}:
+I use [Homebrew](http://brew.sh){:target="_blank"} on macOS and installed the
+latest version (2.1.16) of GnuPG Modern using [homebrew-versions](https://github.com/Homebrew/homebrew-versions/blob/master/README.md){:target="_blank"}:
 
 ``` text
 # NOTE : Installation of 'pinentry-mac' requires a full Xcode installation.
@@ -49,13 +53,6 @@ Yubikey for SSH.
 
 
 ## Setup GnuPG Agent for SSH
-
-**UPDATE** : January 15, 2016 : It has been brought to my attention that adding a
-keygrip to the `sshcontrol` file is not strictly necessary when using a smart-card
-like the Yubikey. It is apparently only needed when dealing with keys on disk and
-also explains the double entry I was seeing with `ssh-add -l`. I have removed the
-section about discovering your keygrip ID and adding it to `sshcontrol` which
-simplifies this setup a bit.
 
 Configure your `gpg-agent` to start with SSH support in
 `~/.gnupg/gpg-agent.conf` by adding the `enable-ssh-support` entry. Here's
@@ -105,15 +102,24 @@ $ ssh-add -L
 ssh-rsa AAAAB3Nza+MY_LONG_SSH_PUB_KEY cardno:000600000000
 ```
 
-Grab the last line starting with `ssh-rsa` and paste
-that into the `authorized_keys` file on the remote machine you want to SSH to.
-This should be one long line and should contain no line breaks.
+Copy the line starting with `ssh-rsa` and paste
+that into the `~/.ssh/authorized_keys` file on the remote machine you want to SSH to.
+This should paste as a single long line with no line breaks.
 
 [Here is what the docs say](https://gnupg.org/faq/whats-new-in-2.1.html){:target="_blank"}
 about the behavior of `gpg-agent` in the context of SSH. This is important to understand.
-The `gpg-agent` must be running for SSH using GnuPG + Yubikey to work.
+The `gpg-agent` must already be running for SSH using GnuPG + Yubikey to work.
 
 > Auto-start of the gpg-agent : If the option --enable-ssh-support is used the auto-start mechanism does not work because ssh does not know about this mechanism. Instead it is required that the environment variable SSH_AUTH_SOCK is set to the S.gpg-agent.ssh socket in the GnuPG home directory. Further gpg-agent must be started: Either by using a GnuPG command which implicitly starts gpg-agent or by using gpgconf --launch gpg-agent to explicitly start it if not yet done.
+
+## Ensure gpg-agent is running
+
+Since `gpg-agent` must be running before you can use your Yubikey for SSH you can
+get it running with a `gpg2 --card-status` command. This should auto start
+the `gpg-agent`.
+
+You can confirm its running with `ps aux | grep gpg-agent | grep -v grep`
+
 
 ## Done?
 
@@ -121,6 +127,21 @@ OK, you should be ready to `ssh you@remotehost.com` now! Make sure your Yubikey
 is inserted and ssh to that host. If all is working right, you should be prompted
 for the user PIN for your Yubikey to unlock it, and once you enter that PIN you
 should succeed in your ssh login.
+
+Now all thats to do is to migrate your old collection of old insecure SSH
+public keys over to your new single GPG/SSH key to rule them all. Enjoy!
+
+
+
+
+FIXME : Does this fix to disable OS X scdaemon still apply to my system? Is it affecting
+what is written here? Does it still apply?
+
+https://gpgtools.tenderapp.com/discussions/problems/28634-gpg-agent-stops-working-after-osx-upgrade-to-yosemite#comment_35808149
+
+FIXME : Remove or update problem fix section?
+
+
 
 ## Problems?
 
@@ -202,6 +223,3 @@ every time you insert the Yubikey.
 
 Please do [let me know](https://github.com/grempe/grempe.github.io/issues) and
 I'll be sure to try out your ideas and document them here if they improve things.
-
-Now all that is remaining is to migrate that collection of SSH
-public keys you have now over to your new GPG/SSH key to rule them all. Enjoy!

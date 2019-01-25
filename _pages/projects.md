@@ -5,15 +5,24 @@ permalink: /projects/
 ---
 
 Here is a sampling of the Open Source projects I have created,
-maintain, or contribute to. I have contributed thousands of commits,
+maintain, or have contributed to. I have contributed thousands of commits,
 pull requests, and issue reports to open source projects in the last
 decade and I believe very strongly in the benefits of Open Source Software. You
-can see a summary of my contributions on my [Github profile page](https://github.com/grempe){:target="_blank"}.
+can see a more detailed summary of my contributions on my [Github profile page](https://github.com/grempe){:target="_blank"}.
 
-In the section that follows I have summarized some of the more recent interesting
-projects I have been working on.
+Some of the more recent interesting projects I have been working on include:
 
-#### [grempe/grempe.github.io](https://github.com/grempe/grempe.github.io){:target="_blank"} (HTML/Markdown/CSS)
+#### [Tierion](https://tierion.com){:target="_blank"} / [Chainpoint](https://chainpoint.org){:target="_blank"} (JavaScript / Node.js / Solidity / Bash / Docker / Kubernetes)
+
+As Vice President of Engineering at [Tierion](https://tierion.com){:target="_blank"}, a blockchain technology provider, I was broadly responsible for all engineering efforts, DevOps, and the overall technical architecture. I designed and coded large portions of the codebase and I am a co-author of the [Chainpoint Proof](https://tokensale.tierion.com/TierionTokenSaleWhitePaper.pdf) standard. The vast majority of this code is available as Open Source code at:
+
+* [https://github.com/tierion](https://github.com/tierion){:target="_blank"}
+* [https://github.com/chainpoint](https://github.com/chainpoint){:target="_blank"}
+* [https://chainpoint.org](https://chainpoint.org){:target="_blank"}
+* [https://tokensale.tierion.com](https://tokensale.tierion.com){:target="_blank"}
+* [Chainpoint Network Whitepaper](https://tokensale.tierion.com/TierionTokenSaleWhitePaper.pdf){:target="_blank"}
+
+#### [grempe/grempe.github.io](https://github.com/grempe/grempe.github.io){:target="_blank"} (HTML / Markdown / CSS)
 
 The source code for this website.
 
