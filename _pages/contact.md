@@ -20,6 +20,8 @@ Here are some good ways to contact me, with varying security properties.
 
 ## Email
 
+ProTip : If you don't know how to use PGP, but still want to send an encrypted message, you can [encrypt a text message to me using Keybase.io](https://keybase.io/encrypt#grempe){:target="_blank"} and simply copy + paste the encrypted message into an email.
+
 ### Standard Security
 
 Unless you send encrypted email, the expectation of privacy is pretty low.
@@ -29,7 +31,6 @@ Unless you send encrypted email, the expectation of privacy is pretty low.
 Please feel free to encrypt sensitive messages to me using PGP with [my PGP public key with ID 0x7FFCB72A6522542E]({{ "/keys/" | relative_url }}).
 
 *Supports : Plain Text / Encrypted Text / Attached Photos / Attached Documents*
-
 
 ### High Security
 
@@ -48,17 +49,22 @@ to me using PGP with [my PGP public key with ID 0x7FFCB72A6522542E]({{ "/keys/" 
 
 ### Signal
 
-[Signal](https://signal.org) is my preferred method of secure real-time contact. If you know my mobile number
-you can reach me with Signal.
+[Signal](https://signal.org){:target="_blank"} is my preferred method of secure real-time contact. You'll need to already know my mobile number to reach me with Signal.
 
-[Signal](https://signal.org) is currently believed
-to be highly secure by those that I respect in the security and cryptography field.
-Researchers have prepared [A Formal Security Analysis of the Signal Messaging Protocol (PDF)](https://eprint.iacr.org/2016/1013.pdf) and found it to be without any major
+[Signal](https://signal.org){:target="_blank"} is deemed the "Gold Standard" by those that I respect in the security and cryptography field. Researchers have prepared [A Formal Security Analysis of the Signal Messaging Protocol (PDF)](https://eprint.iacr.org/2016/1013.pdf){:target="_blank"} and found it to be without any major
 flaws.
 
-Signal [has also demonstrated that they have extremely little metadata](https://whispersystems.org/bigbrother/eastern-virginia-grand-jury/){:target="_blank"} that
-they can make available, even to governments even with lawful orders.
+Signal [has also demonstrated extremely limited access to metadata](https://whispersystems.org/bigbrother/eastern-virginia-grand-jury/){:target="_blank"} that
+they can make available, even to governments with lawful orders.
 
 I may ask you to [verify your safety numbers](https://whispersystems.org/blog/safety-number-updates/){:target="_blank"}.
 
-*Supports : Text Messaging / Voice Calls / Attached Photos / Attached Videos*
+*Supports : Text Messaging / Group Chat / Voice Calls / Attached Photos / Attached Videos*
+
+### Wire
+
+[Wire](https://wire.com){:target="_blank"} is also end-to-end encrypted by default. To contact me on Wire you can make a [connection request](https://support.wire.com/hc/en-us/articles/202856394-How-can-I-connect-with-someone-){:target="_blank"} using my Wire username `@grempe`.
+
+I may ask you to [verify your device keys](https://wire.com/en/blog/key-verification-secure-conversations/){:target="_blank"}.
+
+*Supports : Text Messaging / Group Chat / Voice Calls / Video Calls / Attached Photos / Attached Videos*
