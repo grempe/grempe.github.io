@@ -40,7 +40,7 @@ I [host a signed certificate on this site and domain](https://www.rempe.us/keyba
 that allows you to cryptographically verify that I control all content here.
 You can verify using [keybase.io/grempe](https://keybase.io/grempe){:target="_blank"}.
 
-A second copy of the generated static files for this site are hosted in the [Keybase File System (KBFS)](https://keybase.io/docs/kbfs) and can be viewed at [https://grempe.keybase.pub/www.rempe.us/](https://grempe.keybase.pub/www.rempe.us/). KBFS cryptographically signs all served files.
+A second copy of the generated static files for this site are hosted in the [Keybase File System (KBFS)](https://keybase.io/docs/kbfs){:target="_blank"} and can be viewed at [https://grempe.keybase.pub/www.rempe.us/](https://grempe.keybase.pub/www.rempe.us/){:target="_blank"}. KBFS cryptographically signs all served files.
 
 ### Cloudflare
 
