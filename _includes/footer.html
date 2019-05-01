@@ -1,26 +1,33 @@
 <footer class="site-footer">
-
   <div class="wrapper">
-
     <div class="footer-col-wrapper">
       <div class="footer-col  footer-col-1">
         <ul class="contact-list">
           <li>&copy; {{ site.name }} {{ site.time | date: "%Y" }}</li>
           <li>
-            <span class="fas fa-envelope"></span>&nbsp;<a href="mailto:{{ site.email }}">{{ site.email }}</a>
+            <span class="fas fa-envelope"></span>&nbsp;<a
+              href="mailto:{{ site.email }}"
+              >{{ site.email }}</a
+            >
           </li>
           <li>
-            <span class="fas fa-envelope"></span>&nbsp;<a href="mailto:{{ site.email_secure }}">{{ site.email_secure
-              }}</a>
+            <span class="fas fa-envelope"></span>&nbsp;<a
+              href="mailto:{{ site.email_secure }}"
+              >{{ site.email_secure }}</a
+            >
           </li>
           <li>
             <a href="{{ '/keys/' | relative_url }}">
-              <span class="fas fa-key"></span>&nbsp;<span class="username">OpenPGP 0x7FFCB72A6522542E</span>
+              <span class="fas fa-key"></span>&nbsp;<span class="username"
+                >OpenPGP 0x7FFCB72A6522542E</span
+              >
             </a>
           </li>
           <li>
             <a href="{{ '/money/' | relative_url }}">
-              <span class="fas fa-coffee"></span>&nbsp;<span class="username">Send Money</span>
+              <span class="fas fa-coffee"></span>&nbsp;<span class="username"
+                >Send Money</span
+              >
             </a>
           </li>
         </ul>
@@ -30,42 +37,69 @@
         <ul class="social-media-list">
           {% if site.github_username %}
           <li>
-            <a href="https://github.com/{{ site.github_username }}" target="_blank">
-              <span class="fab fa-github"></span>&nbsp;<span class="username">{{ site.github_username }}</span>
+            <a
+              href="https://github.com/{{ site.github_username }}"
+              target="_blank"
+            >
+              <span class="fab fa-github"></span>&nbsp;<span class="username">{{
+                site.github_username
+              }}</span>
             </a>
           </li>
-          {% endif %}
-
-          {% if site.twitter_username %}
+          {% endif %} {% if site.twitter_username %}
           <li>
-            <a href="https://twitter.com/{{ site.twitter_username }}" target="_blank">
-              <span class="fab fa-twitter"></span>&nbsp;<span class="username">{{ site.twitter_username }}</span>
+            <a
+              href="https://twitter.com/{{ site.twitter_username }}"
+              target="_blank"
+            >
+              <span class="fab fa-twitter"></span>&nbsp;<span
+                class="username"
+                >{{ site.twitter_username }}</span
+              >
             </a>
           </li>
-          {% endif %}
-
-          {% if site.linkedin_username %}
+          {% endif %} {% if site.linkedin_username %}
           <li>
-            <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" target="_blank">
-              <span class="fab fa-linkedin"></span>&nbsp;<span class="username">{{ site.linkedin_username }}</span>
+            <a
+              href="https://www.linkedin.com/in/{{ site.linkedin_username }}"
+              target="_blank"
+            >
+              <span class="fab fa-linkedin"></span>&nbsp;<span
+                class="username"
+                >{{ site.linkedin_username }}</span
+              >
             </a>
           </li>
-          {% endif %}
-
-          {% if site.keybase_username %}
+          {% endif %} {% if site.keybase_username %}
           <li>
-            <a href="https://keybase.io/{{ site.keybase_username }}" target="_blank">
-              <span class="fab fa-keybase"></span>&nbsp;<span class="username">{{ site.keybase_username }}</span>
+            <a
+              href="https://keybase.io/{{ site.keybase_username }}"
+              target="_blank"
+            >
+              <span class="fab fa-keybase"></span>&nbsp;<span
+                class="username"
+                >{{ site.keybase_username }}</span
+              >
             </a>
           </li>
           {% endif %}
 
           <li>
             <a href="https://www.reddit.com/user/grempe/" target="_blank">
-              <span class="fab fa-reddit-alien"></span>&nbsp;<span class="username">grempe</span>
+              <span class="fab fa-reddit-alien"></span>&nbsp;<span
+                class="username"
+                >grempe</span
+              >
             </a>
           </li>
 
+          <li>
+            <a rel="me" href="https://mastodon.social/@grempe" target="_blank">
+              <span class="fab fa-mastodon"></span>&nbsp;<span class="username"
+                >grempe</span
+              >
+            </a>
+          </li>
         </ul>
       </div>
 
@@ -73,25 +107,45 @@
         <p class="text">{{ site.description }}</p>
 
         <p>
-          <span class="fas fa-archive"></span>&nbsp;<a href="{{ '/blog/archive/'' | relative_url }}">blog archive</a><br />
-          <span class="fab fa-github"></span>&nbsp;<a href="{{ site.source_url }}" target="_blank">source code</a><br />
-          <span class="fas fa-bug"></span>&nbsp;<a href="https://github.com/grempe/grempe.github.io/issues" target="_blank">bugs</a><br />
-          <span class="fas fa-rss"></span>&nbsp;<a href="{{ '/feed.xml' | relative_url }}">atom (rss) feed</a>
+          <span class="fas fa-archive"></span>&nbsp;<a
+            href="{{ '/blog/archive/'' | relative_url }}"
+            >blog archive</a
+          ><br />
+          <span class="fab fa-github"></span>&nbsp;<a
+            href="{{ site.source_url }}"
+            target="_blank"
+            >source code</a
+          ><br />
+          <span class="fas fa-bug"></span>&nbsp;<a
+            href="https://github.com/grempe/grempe.github.io/issues"
+            target="_blank"
+            >bugs</a
+          ><br />
+          <span class="fas fa-rss"></span>&nbsp;<a
+            href="{{ '/feed.xml' | relative_url }}"
+            >atom (rss) feed</a
+          >
         </p>
 
         <p>
-          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-            <img alt="Creative Commons License" src="{{ '/resources/cc-by-nc-sa.png' | relative_url }}" width="88" />
+          <a
+            rel="license"
+            href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+          >
+            <img
+              alt="Creative Commons License"
+              src="{{ '/resources/cc-by-nc-sa.png' | relative_url }}"
+              width="88"
+            />
           </a>
         </p>
 
         <p>
-          <span class="fas fa-clock-o"></span>&nbsp;{{ site.time | date_to_rfc822 }}
+          <span class="fas fa-clock-o"></span>&nbsp;{{
+            site.time | date_to_rfc822
+          }}
         </p>
-
       </div>
     </div>
-
   </div>
-
 </footer>
