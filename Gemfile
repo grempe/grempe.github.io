@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem "nokogiri", ">= 1.10.4"
 gem 'github-pages', group: :jekyll_plugins
 gem 'jekyll-redirect-from'
 gem 'jekyll-sitemap'
