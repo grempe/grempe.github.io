@@ -20,36 +20,26 @@ Here are some good ways to contact me, with varying security properties.
 
 ## Email
 
-ProTip : If you don't know how to use PGP, but still want to send an encrypted message, you can [encrypt a text message to me using Keybase.io](https://keybase.io/encrypt#grempe){:target="\_blank"} and simply copy + paste the encrypted message into an email.
-
 ### Standard Security
 
-Unless you send encrypted email, the expectation of privacy is pretty low.
+The expectation of privacy is pretty low.
 
 - [glenn@rempe.us](mailto:glenn@rempe.us)
 
-Please feel free to encrypt sensitive messages to me using PGP with [my PGP public key with ID 0x7FFCB72A6522542E]({{ "/keys/" | relative_url }}).
-
-_Supports : Plain Text / Encrypted Text / Attached Photos / Attached Documents_
-
-### High Security
+### Higher Security
 
 - [grempe@pm.me](mailto:grempe@pm.me)
 
-Sensitive emails should be sent to my [ProtonMail](https://protonmail.com){:target="\_blank"}
+You can send more sensitive emails to my [ProtonMail](https://protonmail.com){:target="\_blank"}
 account. It is best if you also use your own ProtonMail account to send messages to me, as that
 ensures the message will be encrypted end-to-end. Read more about [ProtonMail Security](https://protonmail.com/security-details){:target="\_blank"}.
 
 If you don't have a ProtonMail account please feel free to encrypt sensitive messages
 to me using PGP with [my PGP public key with ID 0x7FFCB72A6522542E]({{ "/keys/" | relative_url }})
 
-_Supports : Plain Text / Encrypted Text / Attached Photos / Attached Documents_
+Please don't encrypt emails unless the content is truly security sensitive.
 
 ## Messaging
-
-### Keybase
-
-[Keybase](https://keybase.io/grempe){:target="\_blank"} with username `grempe` is the best way to chat, send encrypted messages, or confirm my online identities.
 
 ### Signal
 
@@ -63,4 +53,6 @@ they can make available, even to governments with lawful orders.
 
 I may ask you to [verify your safety numbers](https://whispersystems.org/blog/safety-number-updates/){:target="\_blank"}.
 
-_Supports : Text Messaging / Group Chat / Voice Calls / Attached Photos / Attached Videos_
+### Keybase
+
+[Keybase](https://keybase.io/grempe){:target="\_blank"} with username `grempe` is a good way to chat, send encrypted messages, or confirm my online identities. That is unless they are [completely subsumed by Zoom](https://blog.zoom.us/wordpress/2020/05/07/zoom-acquires-keybase-and-announces-goal-of-developing-the-most-broadly-used-enterprise-end-to-end-encryption-offering/).

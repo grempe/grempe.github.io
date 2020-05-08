@@ -6,12 +6,14 @@ tags: security cryptography gnupg ssh yubikey osx
 categories: security
 ---
 
+WARNING : This post is from 2006 and likely out of date.
+
 I have been using a Yubico
-[Yubikey NEO](https://www.yubico.com/products/yubikey-hardware/yubikey-neo/){:target="_blank"}
-security token to store my [GnuPG](https://www.gnupg.org/){:target="_blank"}
+[Yubikey NEO](https://www.yubico.com/products/yubikey-hardware/yubikey-neo/){:target="\_blank"}
+security token to store my [GnuPG](https://www.gnupg.org/){:target="\_blank"}
 private keys for about a year now. The Yubikey is a powerful security token and
 I wanted to make use of it to manage my SSH keys as well. I also recently transitioned
-to the newer [GnuPG 'Modern' 2.1.x](https://gnupg.org/faq/whats-new-in-2.1.html){:target="_blank"}
+to the newer [GnuPG 'Modern' 2.1.x](https://gnupg.org/faq/whats-new-in-2.1.html){:target="\_blank"}
 release and there are significant changes to how you would go about using your
 GPG keys for SSH. Since I ran into a few issues, and the existing documentation
 on the web is somewhat lacking, I thought I would write up some notes documenting
@@ -24,10 +26,10 @@ dissapeared for me. I have updated this post to reflect current reality.
 
 ## GnuPG Install
 
-I use [Homebrew](http://brew.sh){:target="_blank"} on macOS and installed the
-latest version (2.1.16) of GnuPG Modern using [homebrew-versions](https://github.com/Homebrew/homebrew-versions/blob/master/README.md){:target="_blank"}:
+I use [Homebrew](http://brew.sh){:target="\_blank"} on macOS and installed the
+latest version (2.1.16) of GnuPG Modern using [homebrew-versions](https://github.com/Homebrew/homebrew-versions/blob/master/README.md){:target="\_blank"}:
 
-``` text
+```text
 # NOTE : Installation of 'pinentry-mac' requires a full Xcode installation.
 # The command line tools are not sufficient.
 brew tap homebrew/versions
@@ -39,18 +41,17 @@ brew install pinentry-mac
 
 Here is a useful site for learning how to add your SSH keys to your Yubikey.
 
-* [https://blog.josefsson.org/2014/06/23/offline-gnupg-master-key-and-subkeys-on-yubikey-neo-smartcard/](https://blog.josefsson.org/2014/06/23/offline-gnupg-master-key-and-subkeys-on-yubikey-neo-smartcard/){:target="_blank"}
+- [https://blog.josefsson.org/2014/06/23/offline-gnupg-master-key-and-subkeys-on-yubikey-neo-smartcard/](https://blog.josefsson.org/2014/06/23/offline-gnupg-master-key-and-subkeys-on-yubikey-neo-smartcard/){:target="\_blank"}
 
 ## Using GnuPG for SSH Authentication
 
 The following websites offered some useful info when learning about using the
 Yubikey for SSH.
 
-* [http://incenp.org/notes/2015/gnupg-for-ssh-authentication.html](http://incenp.org/notes/2015/gnupg-for-ssh-authentication.html){:target="_blank"}
-* [https://lists.gnupg.org/pipermail/gnupg-users/2012-July/045059.html](https://lists.gnupg.org/pipermail/gnupg-users/2012-July/045059.html){:target="_blank"}
-* [http://budts.be/weblog/2012/08/ssh-authentication-with-your-pgp-key](http://budts.be/weblog/2012/08/ssh-authentication-with-your-pgp-key){:target="_blank"}
-* [https://gnupg.org/faq/whats-new-in-2.1.html](https://gnupg.org/faq/whats-new-in-2.1.html){:target="_blank"}  (see 'Auto-start of the gpg-agent')
-
+- [http://incenp.org/notes/2015/gnupg-for-ssh-authentication.html](http://incenp.org/notes/2015/gnupg-for-ssh-authentication.html){:target="\_blank"}
+- [https://lists.gnupg.org/pipermail/gnupg-users/2012-July/045059.html](https://lists.gnupg.org/pipermail/gnupg-users/2012-July/045059.html){:target="\_blank"}
+- [http://budts.be/weblog/2012/08/ssh-authentication-with-your-pgp-key](http://budts.be/weblog/2012/08/ssh-authentication-with-your-pgp-key){:target="\_blank"}
+- [https://gnupg.org/faq/whats-new-in-2.1.html](https://gnupg.org/faq/whats-new-in-2.1.html){:target="\_blank"} (see 'Auto-start of the gpg-agent')
 
 ## Setup GnuPG Agent for SSH
 
@@ -58,7 +59,7 @@ Configure your `gpg-agent` to start with SSH support in
 `~/.gnupg/gpg-agent.conf` by adding the `enable-ssh-support` entry. Here's
 my config (which also makes use of the pinentry-mac package we installed earlier).
 
-``` text
+```text
 default-cache-ttl 900
 max-cache-ttl 999999
 pinentry-program /usr/local/bin/pinentry-mac
@@ -70,7 +71,7 @@ Next, configure all of your shell environment to have an appropriate
 from my `~/.zshrc`. You'll want to source your config file or close
 and open a new terminal window after this change.
 
-``` text
+```text
 ...
 # GPG 2.1.x SSH support
 # See : http://incenp.org/notes/2015/gnupg-for-ssh-authentication.html
@@ -83,7 +84,7 @@ then re-insert your Yubikey. Alternatively, run `killall gpg-agent`.
 You may want to also confirm that you no longer have any `ssh-agent` processes
 running. `ssh-agent` is no longer used at all with this setup.
 
-``` text
+```text
 * remove key *
 /usr/local/bin/gpgconf --kill gpg-agent && /usr/local/bin/gpgconf --launch gpg-agent
 * insert key *
@@ -97,7 +98,7 @@ is running and ready to support your SSH client, and all that you need to do is
 reveal your SSH public key so you can add it to the `authorized_keys` file on
 your remote server you want to access with SSH.
 
-``` text
+```text
 $ ssh-add -L
 ssh-rsa AAAAB3Nza+MY_LONG_SSH_PUB_KEY cardno:000600000000
 ```
@@ -106,7 +107,7 @@ Copy the line starting with `ssh-rsa` and paste
 that into the `~/.ssh/authorized_keys` file on the remote machine you want to SSH to.
 This should paste as a single long line with no line breaks.
 
-[Here is what the docs say](https://gnupg.org/faq/whats-new-in-2.1.html){:target="_blank"}
+[Here is what the docs say](https://gnupg.org/faq/whats-new-in-2.1.html){:target="\_blank"}
 about the behavior of `gpg-agent` in the context of SSH. This is important to understand.
 The `gpg-agent` must already be running for SSH using GnuPG + Yubikey to work.
 
@@ -120,7 +121,6 @@ the `gpg-agent`.
 
 You can confirm its running with `ps aux | grep gpg-agent | grep -v grep`
 
-
 ## Done?
 
 OK, you should be ready to `ssh you@remotehost.com` now! Make sure your Yubikey
@@ -131,9 +131,6 @@ should succeed in your ssh login.
 Now all thats to do is to migrate your old collection of old insecure SSH
 public keys over to your new single GPG/SSH key to rule them all. Enjoy!
 
-
-
-
 FIXME : Does this fix to disable OS X scdaemon still apply to my system? Is it affecting
 what is written here? Does it still apply?
 
@@ -141,12 +138,10 @@ https://gpgtools.tenderapp.com/discussions/problems/28634-gpg-agent-stops-workin
 
 FIXME : Remove or update problem fix section?
 
-
-
 ## Problems?
 
 **UPDATE** : January 15, 2016 : I am working through this issue in the gnupg-users
-mailing list. You can follow along with the discussion thread  [here](https://lists.gnupg.org/pipermail/gnupg-users/2016-January/054988.html){:target="_blank"}.
+mailing list. You can follow along with the discussion thread [here](https://lists.gnupg.org/pipermail/gnupg-users/2016-January/054988.html){:target="\_blank"}.
 I'll update this post again if there is a resolution to this issue.
 
 I ran into one major problem with this setup. It seems that if the `gpg-agent`
@@ -154,14 +149,14 @@ is running and you remove your Yubikey and re-insert it, the `gpg-agent` will
 no longer recognize that your Yubikey is present and SSH logins won't work.
 
 Normally this isn't a problem when just using the Yubikey for GPG keys since
-GnuPG will take care of launching the agent as needed.  But in the SSH scenario
+GnuPG will take care of launching the agent as needed. But in the SSH scenario
 you want the `gpg-agent` to be ready to go for SSH whenever your Yubikey is
 inserted.
 
 The only way I could discover to fix this was to kill and restart `gpg-agent` after
 each Yubikey insertion.
 
-``` text
+```text
 gpgconf --kill gpg-agent && gpgconf --launch gpg-agent
 ```
 
@@ -180,14 +175,14 @@ or removed.
 I added the following shell script (make sure it is `chmod 700`) to
 `~/bin/gpg-agent-restart.sh`.
 
-``` text
+```text
 #!/bin/bash
 /usr/local/bin/gpgconf --kill gpg-agent && /usr/local/bin/gpgconf --launch gpg-agent
 ```
 
 You can test that this technique will work for you by running that script manually
 after a removal and re-insertion of the Yubikey. If it does, then you can [install
-ControlPlane](http://www.controlplaneapp.com){:target="_blank"} to automate it.
+ControlPlane](http://www.controlplaneapp.com){:target="\_blank"} to automate it.
 
 ### ControlPlane Setup
 
